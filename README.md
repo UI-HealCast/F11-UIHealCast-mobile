@@ -1,4 +1,4 @@
-# F11 - UI Healt Care System
+# F11 - UI Health Care System
 
 A new Flutter project.
 
