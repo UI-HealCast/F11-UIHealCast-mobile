@@ -5,10 +5,6 @@
 > diselenggarakan oleh Fakultas Ilmu Komputer, Universitas Indonesia
 > pada Semester Gasal, Tahun Ajaran 2022/2023.
 
-
-## 🌐 Situs Web 🌐
-Proyek ini dapat diakses di [uihealcast.herokuapp.com](https://uihealcast.herokuapp.com/).
-
 ## 📋 Latar Belakang 📋
 Arsitektur Kesehatan menjadi salah satu isu penting yang dibahas dalam Presidensi G20 Indonesia 2022. Fokus dari isu ini adalah melakukan transformasi infrastruktur kesehatan global untuk meningkatkan pencegahan, kesiagaan, dan responsivitas penanganan. Sejalan dengan tema presidensi G20 “Recover Together, Recover Stronger”, pelayanan kesehatan harus inklusif dan responsif. Hal ini dapat diwujudkan dengan melakukan transformasi terhadap sistem informasi kesehatan agar semua kalangan dapat mengakses pelayanan kesehatan dengan mudah.
 Permasalahan sulitnya mendapatkan informasi pelayanan kesehatan membawa kita pada solusi berupa aplikasi sistem informasi kesehatan. Sistem informasi kesehatan ini terintegrasi dengan pihak penyedia jasa dan fasilitas kesehatan agar memudahkan masyarakat dalam mendapatkan informasi dan pelayanan secara efisien. Aplikasi ini akan membantu pasien RS UI dan Klinik Makara dalam mendapatkan informasi dan pelayanan kesehatan.
