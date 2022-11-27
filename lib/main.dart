@@ -9,7 +9,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  final bool isLogged = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +24,10 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           "/login": (BuildContext context) => const LoginPage(),
-          "/pelayananDokter": (BuildContext context) => const LoginPage(),
           '/home': (BuildContext context) =>
               const MyHomePage(title: "UI Heath Care"),
         },
-        initialRoute: isLogged ? "/home" : "/login",
+        initialRoute: "/home",
       ),
     );
   }
