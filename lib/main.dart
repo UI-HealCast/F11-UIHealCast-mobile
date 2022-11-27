@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           "/login": (BuildContext context) => const LoginPage(),
+          "/pelayananDokter": (BuildContext context) => const LoginPage(),
           '/home': (BuildContext context) =>
               const MyHomePage(title: "UI Heath Care"),
         },
