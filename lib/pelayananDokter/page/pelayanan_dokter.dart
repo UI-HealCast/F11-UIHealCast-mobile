@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:f11uihealcast/pelayananDokter/component/form_pelayanan_dokter.dart';
 
 class PelayananDokterPage extends StatefulWidget {
   const PelayananDokterPage({super.key});
@@ -8,8 +9,15 @@ class PelayananDokterPage extends StatefulWidget {
 }
 
 class _PelayananDokterState extends State<PelayananDokterPage> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Form Pelayanan Dokter'),
+      ),
+      body: FormPelayananDokter(formKey: _formKey),
+    );
   }
 }
