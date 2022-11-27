@@ -42,3 +42,13 @@ Dapat menambahkan info obat yang tersedia dan dapat menerima pesanan obat yang d
 
 Administrasi :
 Mengatur transaksi pembayaran dengan pasien
+
+
+## 🔗 Integrasi dengan Situs Web 🔗
+Berikut adalah langkah-langkah yang akan dilakukan untuk mengintegrasikan aplikasi dengan server web.
+
+1. Mengimplementasikan sebuah _wrapper class_ dengan menggunakan library _http_ serta pbp_django_auth yang dibentuk oleh tim asdos untuk mendukung cookie, session, dan authentification pada app UI Health Care
+2. Mengimplementasikan Django REST dengan menggunakan JsonResponse atau Django JSON Serializer untuk di request GET dalam apk.
+3. Mengimplementasikan desain _front-end_ untuk aplikasi berdasarkan desain website yang sudah ada sebelumnya.
+4. Melakukan integrasi antara _front-end_ dengan _back-end_ dengan menggunakan konsep _asynchronous_ HTTP.
+
