@@ -1,7 +1,9 @@
+import 'package:f11uihealcast/landing/components/drawer.dart';
+import 'package:f11uihealcast/pelayananDokter/page/pelayanan_dokter.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:f11uihealcast/landing/page/LoginPage.dart';
+import 'package:f11uihealcast/landing/page/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,10 +26,12 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           "/login": (BuildContext context) => const LoginPage(),
+          "/pelayananDokter": (BuildContext context) =>
+              const PelayananDokterPage(),
           '/home': (BuildContext context) =>
               const MyHomePage(title: "UI Heath Care"),
         },
-        initialRoute: "/home",
+        initialRoute: "/login",
       ),
     );
   }
@@ -79,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+      drawer: const MyDrawer(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
