@@ -27,7 +27,7 @@ Berikut ini adalah daftar modul yang akan diimplementasikan beserta pengembang d
 
 ## 👥 Persona 👥
 ### 🔒 User Yang Tidak Login 🔒
-User yang tidak login dapat : Melihat daftar dokter yang ada serta ketersediaan obat
+Aplikasi hanya dapat digunakan setelah user Log In
 
 ### 🔑 User Yang Sudah Login 🔑
 
