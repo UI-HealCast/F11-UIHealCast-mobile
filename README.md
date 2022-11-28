@@ -1,3 +1,7 @@
+[![Develop](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/develop.yml/badge.svg)](https://github.com/reflekt-io/echo-appcenter/actions/workflows/develop.yml)
+[![Pre-Release](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/pre-release.yml/badge.svg)](https://github.com/reflekt-io/echo-appcenter/actions/workflows/pre-release.yml)
+[![Release](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/release.yml/badge.svg)](https://github.com/reflekt-io/echo-appcenter/actions/workflows/release.yml)
+
 # UI HealCast
 
 > Proyek ini dibuat untuk memenuhi tugas Proyek Akhir Semester (PAS)
