@@ -1,7 +1,9 @@
-import 'package:f11uihealcast/pelayananDokter/api/get_doctor_ready.dart';
+import 'package:f11uihealcast/pelayananDokter/api/api_pelayananDokter.dart';
 import 'package:f11uihealcast/pelayananDokter/model/doctor_ready.dart';
 import 'package:f11uihealcast/pelayananDokter/page/pelayanan_dokter.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
 
 class FormPelayananDokter extends StatefulWidget {
   const FormPelayananDokter({super.key, this.formKey});
@@ -31,8 +33,9 @@ class _FormPelayananDokter extends State<FormPelayananDokter> {
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     return FutureBuilder(
-        future: fetchDokter(),
+        future: fetchDokter(request),
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.data == null) {
             return const Center(child: CircularProgressIndicator());
@@ -41,7 +44,7 @@ class _FormPelayananDokter extends State<FormPelayananDokter> {
               return Column(
                 children: const [
                   Text(
-                    "Tidak ada watchlist :(",
+                    "Tidak ada Dokter :(",
                     style: TextStyle(color: Color(0xff59A5D8), fontSize: 20),
                   ),
                   SizedBox(height: 8),
@@ -160,9 +163,7 @@ class _FormPelayananDokter extends State<FormPelayananDokter> {
                       ),
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          print(keluhan);
-                          print(_selectDokter);
-                          print(noHP);
+                          addJanji(request, keluhan, noHP, _selectDokter);
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
@@ -170,7 +171,6 @@ class _FormPelayananDokter extends State<FormPelayananDokter> {
                                     const PelayananDokterPage()),
                           );
                         }
-                        ;
                       },
                     )
                   ]),

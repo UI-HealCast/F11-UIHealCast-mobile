@@ -1,4 +1,4 @@
-import 'package:f11uihealcast/landing/components/drawer.dart';
+import 'package:f11uihealcast/landing/components/drawer_pasien.dart';
 import 'package:f11uihealcast/pelayananDokter/page/pelayanan_dokter.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
