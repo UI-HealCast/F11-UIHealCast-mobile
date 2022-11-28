@@ -37,5 +37,5 @@ jobs:
       - name: Get packages
         run: flutter packages get
 
-      - name: Analyze
-        run: flutter analyze
+#       - name: Analyze
+#         run: flutter analyze
