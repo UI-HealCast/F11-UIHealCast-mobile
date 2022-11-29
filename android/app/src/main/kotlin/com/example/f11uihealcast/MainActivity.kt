@@ -1,4 +1,4 @@
-package com.example.f11uihealcast
+package com.f11uihealcast
 
 import io.flutter.embedding.android.FlutterActivity
 
