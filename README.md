@@ -12,6 +12,7 @@
 ## 📋 Latar Belakang 📋
 Arsitektur Kesehatan menjadi salah satu isu penting yang dibahas dalam Presidensi G20 Indonesia 2022. Fokus dari isu ini adalah melakukan transformasi infrastruktur kesehatan global untuk meningkatkan pencegahan, kesiagaan, dan responsivitas penanganan. Sejalan dengan tema presidensi G20 “Recover Together, Recover Stronger”, pelayanan kesehatan harus inklusif dan responsif. Hal ini dapat diwujudkan dengan melakukan transformasi terhadap sistem informasi kesehatan agar semua kalangan dapat mengakses pelayanan kesehatan dengan mudah.
 <br/>
+<br/>
 Permasalahan sulitnya mendapatkan informasi pelayanan kesehatan membawa kita pada solusi berupa aplikasi sistem informasi kesehatan. Sistem informasi kesehatan ini terintegrasi dengan pihak penyedia jasa dan fasilitas kesehatan agar memudahkan masyarakat dalam mendapatkan informasi dan pelayanan secara efisien. Seiring berkembangnya teknologi, aplikasi mobile menjadi pilihan utama untuk membuat penggunaannya menjadi lebih efisien. Maka daripada itu, kelompok kami melakukan pengembangan aplikasi UIHealCast yang sudah dibentuk pada proyek tengah semester menjadi aplikasi berbasi mobile yang bernama UIHealCast Mobile. Aplikasi UIHealCast Mobile dapat membantu pasien RS UI dan Klinik Makara dalam mendapatkan informasi dan pelayanan kesehatan.
  
 ## 👨‍💻 Pengembang 👩‍💻
