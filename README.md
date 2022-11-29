@@ -33,6 +33,7 @@ Pelayanan apotek adalah menu dimana pasien dapat melihat obat apa saja yang seda
 Pelayanan konseling adalah fitur dimana pasien dapat membuat janji konseling dengan dokter. Janji yang sudah diubah akan disimpan dalam database menggunakan `post` dan akan ditampilkan history konseling yang sudah pasien tersebut lakukan dengan methode `get`.
 
 - Operasi - [Dianisa Wulandari](https://github.com/dianisa)
+Pada fitur operasi, terdapat sebuah form dimana dokter dapat membuat jadwal operasi untuk pasien tertentu dengan menggunakan http `post`. Selain itu, dokter dan pasien juga dapat melihat jadwal operasi serta keterangan dari operasi yang didaftarkan untuk dirinya dengan menggunakan method `get`.
 
 * Pembayaran - [Undissya Putri Maharani](https://github.com/UndissyaPutri)
 Menu pembayaran adalah menu dimana pasien dapat melihat apakah pelayanan yang sudah pasien lakukan sudah dibayar atau belum dengan menggunakan `get`. Selain itu, dari role administrasi, mereka dapat mengubah status pembayaran dari pasien dan membuat catatan bulanan dengan menggunakan http `post`.
