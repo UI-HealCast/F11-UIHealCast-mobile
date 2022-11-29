@@ -52,16 +52,16 @@ Pengguna yang tidak Log In hanya akan dapat melihat dashboard. Drawer hanya akan
 
 ### 🔑 User Yang Sudah Login 🔑
 
-Dokter :
+* Dokter :
 Dapat menambahkan dan mengganti jadwal ketersediaan dokter. Selain itu, dokter juga dapat memberikan feedback setelah "pasien" telah selesai melakukan pelayanan dokter. Feedback tersebut dapat dilihat dari pasien itu sendiri. Untuk mengganti jadwal, digunakan http request dengan tipe `patch` untuk mengunpdate status ketersediaan dokter tersebut pada real time. Untuk menambahkan feedback pasien setelah melakukan pelayanan dokter, digunakan `post` untuk mengubat feedback yang awalnya kosong menjadi sesuai apa yang ditulis oleh dokter.
 
-Pasien :
+* Pasien :
 Dapat mengakses menu registrasi layanan dokter, menu operasi, konseling, serta menu pembayaran. Pasien juga dapat melihat history dari pelayananDokter serta pelayanan Konseling yang sudah dibuat dengan memanfaatkan http request `get`. Hasil dari history akan memberitahukan apakah status pelayanannya sudah selesai atau belum.
 
-Apoteker :
+* Apoteker :
 Dapat menambahkan info obat yang tersedia dan dapat menerima pesanan obat yang dibuat oleh pasien.
 
-Administrasi :
+* Administrasi :
 Mengubah status pembayaran dari pasien dengan menggunakan `post` serta membuat catatan bulanan pada sistem.
 
 
