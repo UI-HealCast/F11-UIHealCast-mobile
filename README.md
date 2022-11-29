@@ -13,7 +13,7 @@
 Arsitektur Kesehatan menjadi salah satu isu penting yang dibahas dalam Presidensi G20 Indonesia 2022. Fokus dari isu ini adalah melakukan transformasi infrastruktur kesehatan global untuk meningkatkan pencegahan, kesiagaan, dan responsivitas penanganan. Sejalan dengan tema presidensi G20 “Recover Together, Recover Stronger”, pelayanan kesehatan harus inklusif dan responsif. Hal ini dapat diwujudkan dengan melakukan transformasi terhadap sistem informasi kesehatan agar semua kalangan dapat mengakses pelayanan kesehatan dengan mudah.
 <br/>
 <br/>
-Permasalahan sulitnya mendapatkan informasi pelayanan kesehatan membawa kita pada solusi berupa aplikasi sistem informasi kesehatan. Sistem informasi kesehatan ini terintegrasi dengan pihak penyedia jasa dan fasilitas kesehatan agar memudahkan masyarakat dalam mendapatkan informasi dan pelayanan secara efisien. Seiring berkembangnya teknologi, aplikasi mobile menjadi pilihan utama untuk membuat penggunaannya menjadi lebih efisien. Maka daripada itu, kelompok kami melakukan pengembangan aplikasi UIHealCast yang sudah dibentuk pada proyek tengah semester menjadi aplikasi berbasi mobile yang bernama UIHealCast Mobile. Aplikasi UIHealCast Mobile dapat membantu pasien RS UI dan Klinik Makara dalam mendapatkan informasi dan pelayanan kesehatan.
+Permasalahan sulitnya mendapatkan informasi pelayanan kesehatan membawa kita pada solusi berupa aplikasi sistem informasi kesehatan. Sistem informasi kesehatan ini terintegrasi dengan pihak penyedia jasa dan fasilitas kesehatan agar memudahkan masyarakat dalam mendapatkan informasi dan pelayanan secara efisien. Seiring berkembangnya teknologi, aplikasi mobile menjadi pilihan utama karena penggunaannya yang lebih mudah dan efisien. Oleh karena itu, kelompok kami melakukan pengembangan terhadap aplikasi UIHealCast yang sudah dibentuk pada proyek tengah semester menjadi aplikasi berbasis mobile yang bernama UIHealCast Mobile. Aplikasi UIHealCast Mobile dapat membantu pasien RS UI dan Klinik Makara dalam mendapatkan informasi dan pelayanan kesehatan.
  
 ## 👨‍💻 Pengembang 👩‍💻
 Proyek ini dibuat oleh kelompok F11 yang beranggotakan sebagai berikut:
@@ -27,7 +27,7 @@ Proyek ini dibuat oleh kelompok F11 yang beranggotakan sebagai berikut:
 Berikut ini adalah daftar modul yang akan diimplementasikan beserta pengembang dari setiap modul:
 * Pelayanan Dokter - [Yudi Putra Sabri](https://github.com/yudiptr)
 
-Pelayanan Dokter adalah menu dimana pasien dapat membuat janji temu dan memilih dokter mana yang ia inginkan. Untuk mengimplementasikan fitur ini, diperlukan dua buah method http request berupa `post` dan `get`. `Post` digunakan untuk mengirimkan hasil dari janji temu dengan dokter yang berisi keluhan, nomor telefon, dan pilihan dokter. `Get` digunakan untuk mengambil data dokter yang sedang "ada" pada saat tersebut.
+Pelayanan Dokter adalah menu dimana pasien dapat membuat janji temu dan memilih dokter mana yang ia inginkan. Untuk mengimplementasikan fitur ini, diperlukan dua buah method http request berupa `post` dan `get`. `Post` digunakan untuk mengirimkan hasil dari janji temu dengan dokter yang berisi keluhan, nomor telepon, dan pilihan dokter. `Get` digunakan untuk mengambil data dokter yang sedang "ada" pada saat tersebut.
 
 * Pelayanan Apotek - [Kezia Natalia](https://github.com/kezianatalia)
 
@@ -35,7 +35,7 @@ Pelayanan apotek adalah menu dimana pasien dapat melihat obat apa saja yang seda
 
 * Pelayanan Konseling - [Syahrul Apriansyah](https://github.com/SyahrulApr86)
 
-Pelayanan konseling adalah fitur dimana pasien dapat membuat janji konseling dengan dokter. Janji yang sudah diubah akan disimpan dalam database menggunakan `post` dan akan ditampilkan history konseling yang sudah pasien tersebut lakukan dengan methode `get`.
+Pelayanan konseling adalah fitur dimana pasien dapat membuat janji konseling dengan dokter. Janji yang sudah diubah akan disimpan dalam database menggunakan `post` dan akan ditampilkan history konseling yang sudah pasien tersebut lakukan dengan method `get`.
 
 * Operasi - [Dianisa Wulandari](https://github.com/dianisa)
 
@@ -64,7 +64,7 @@ Pengguna yang tidak Log In hanya akan dapat melihat dashboard. Drawer hanya akan
 Dapat menambahkan dan mengganti jadwal ketersediaan dokter. Selain itu, dokter juga dapat memberikan feedback setelah "pasien" telah selesai melakukan pelayanan dokter. Feedback tersebut dapat dilihat dari pasien itu sendiri. Untuk mengganti jadwal, digunakan http request dengan tipe `patch` untuk mengupdate status ketersediaan dokter tersebut pada real time. Untuk menambahkan feedback pasien setelah melakukan pelayanan dokter, digunakan `post` untuk mengubat feedback yang awalnya kosong menjadi sesuai apa yang ditulis oleh dokter. Dokter juga dapat membuat jadwal operasi untuk pasien tertentu serta melihat jadwal operasi yang didaftarkan untuk dirinya dengan menggunakan request `post` dan `get`.
 
 * Pasien :
-Dapat mengakses menu registrasi layanan dokter, menu operasi, konseling, serta menu pembayaran. Pasien juga dapat melihat history dari pelayananDokter, operasi, serta pelayananKonseling yang sudah dibuat dengan memanfaatkan http request `get`. Hasil dari history akan memberitahukan apakah status pelayanannya sudah selesai atau belum.
+Dapat mengakses menu registrasi layanan dokter, menu operasi, konseling, serta menu pembayaran. Pasien juga dapat melihat history dari pelayanan dokter, operasi, serta pelayanan konseling yang sudah dibuat dengan memanfaatkan http request `get`. Hasil dari history akan memberitahukan apakah status pelayanannya sudah selesai atau belum.
 
 * Apoteker :
 Dapat menambahkan info obat yang tersedia dan dapat menerima pesanan obat yang dibuat oleh pasien.
