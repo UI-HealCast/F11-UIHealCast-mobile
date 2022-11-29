@@ -24,18 +24,23 @@ Proyek ini dibuat oleh kelompok F11 yang beranggotakan sebagai berikut:
 ## 📋 Daftar Modul 📋
 Berikut ini adalah daftar modul yang akan diimplementasikan beserta pengembang dari setiap modul:
 * Pelayanan Dokter - [Yudi Putra Sabri](https://github.com/yudiptr)
+
 Pelayanan Dokter adalah menu dimana pasien dapat membuat janji temu dan memilih dokter mana yang ia inginkan. Untuk mengimplementasikan fitur ini, diperlukan dua buah method http request berupa `post` dan `get`. `Post` digunakan untuk mengirimkan hasil dari janji temu dengan dokter yang berisi keluhan, nomor telefon, dan pilihan dokter. `Get` digunakan untuk mengambil data dokter yang sedang "ada" pada saat tersebut.
 
 * Pelayanan Apotek - [Kezia Natalia](https://github.com/kezianatalia)
+
 Pelayanan apotek adalah menu dimana pasien dapat melihat obat apa saja yang sedang tersedia pada sistem UIHealCast. Akan tetapi, untuk role apoteker, mereka daat melakukan update terkait informasi obat yang tersedia seperti menambahkan obat dan mengubah status ketersediaan obat. Pada fitur ini juga akan digunakan `post` yang akan digunakan untuk mengupdate status obat dan `get` untuk mengambil data obat.
 
 * Pelayanan Konseling - [Syahrul Apriansyah](https://github.com/SyahrulApr86)
+
 Pelayanan konseling adalah fitur dimana pasien dapat membuat janji konseling dengan dokter. Janji yang sudah diubah akan disimpan dalam database menggunakan `post` dan akan ditampilkan history konseling yang sudah pasien tersebut lakukan dengan methode `get`.
 
-- Operasi - [Dianisa Wulandari](https://github.com/dianisa)
+* Operasi - [Dianisa Wulandari](https://github.com/dianisa)
+
 Pada fitur operasi, terdapat sebuah form dimana dokter dapat membuat jadwal operasi untuk pasien tertentu dengan menggunakan http `post`. Selain itu, dokter dan pasien juga dapat melihat jadwal operasi serta keterangan dari operasi yang didaftarkan untuk dirinya dengan menggunakan method `get`.
 
 * Pembayaran - [Undissya Putri Maharani](https://github.com/UndissyaPutri)
+
 Menu pembayaran adalah menu dimana pasien dapat melihat apakah pelayanan yang sudah pasien lakukan sudah dibayar atau belum dengan menggunakan `get`. Selain itu, dari role administrasi, mereka dapat mengubah status pembayaran dari pasien dan membuat catatan bulanan dengan menggunakan http `post`.
 
 
@@ -54,10 +59,10 @@ Pengguna yang tidak Log In hanya akan dapat melihat dashboard. Drawer hanya akan
 ### 🔑 User Yang Sudah Login 🔑
 
 * Dokter :
-Dapat menambahkan dan mengganti jadwal ketersediaan dokter. Selain itu, dokter juga dapat memberikan feedback setelah "pasien" telah selesai melakukan pelayanan dokter. Feedback tersebut dapat dilihat dari pasien itu sendiri. Untuk mengganti jadwal, digunakan http request dengan tipe `patch` untuk mengunpdate status ketersediaan dokter tersebut pada real time. Untuk menambahkan feedback pasien setelah melakukan pelayanan dokter, digunakan `post` untuk mengubat feedback yang awalnya kosong menjadi sesuai apa yang ditulis oleh dokter.
+Dapat menambahkan dan mengganti jadwal ketersediaan dokter. Selain itu, dokter juga dapat memberikan feedback setelah "pasien" telah selesai melakukan pelayanan dokter. Feedback tersebut dapat dilihat dari pasien itu sendiri. Untuk mengganti jadwal, digunakan http request dengan tipe `patch` untuk mengupdate status ketersediaan dokter tersebut pada real time. Untuk menambahkan feedback pasien setelah melakukan pelayanan dokter, digunakan `post` untuk mengubat feedback yang awalnya kosong menjadi sesuai apa yang ditulis oleh dokter. Dokter juga dapat membuat jadwal operasi untuk pasien tertentu serta melihat jadwal operasi yang didaftarkan untuk dirinya dengan menggunakan request `post` dan `get`.
 
 * Pasien :
-Dapat mengakses menu registrasi layanan dokter, menu operasi, konseling, serta menu pembayaran. Pasien juga dapat melihat history dari pelayananDokter serta pelayanan Konseling yang sudah dibuat dengan memanfaatkan http request `get`. Hasil dari history akan memberitahukan apakah status pelayanannya sudah selesai atau belum.
+Dapat mengakses menu registrasi layanan dokter, menu operasi, konseling, serta menu pembayaran. Pasien juga dapat melihat history dari pelayananDokter, operasi, serta pelayananKonseling yang sudah dibuat dengan memanfaatkan http request `get`. Hasil dari history akan memberitahukan apakah status pelayanannya sudah selesai atau belum.
 
 * Apoteker :
 Dapat menambahkan info obat yang tersedia dan dapat menerima pesanan obat yang dibuat oleh pasien.
