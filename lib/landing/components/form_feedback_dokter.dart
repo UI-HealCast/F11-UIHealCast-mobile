@@ -66,8 +66,9 @@ class _FeedbackState extends State<FormFeedBack> {
                 // Validator sebagai validasi form
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return 'Keluhan tidak boleh kosong!';
+                    return 'Feedback tidak boleh kosong!';
                   }
+                  keluhanMasuk = value;
                   return null;
                 },
               ),
@@ -81,8 +82,6 @@ class _FeedbackState extends State<FormFeedBack> {
                 backgroundColor: MaterialStateProperty.all(Colors.blue),
               ),
               onPressed: () {
-                print(data.pk);
-                print(11111111111);
                 if (formKey.currentState!.validate()) {
                   modifHasil(request, keluhanMasuk, data.pk);
                   Navigator.pushReplacement(

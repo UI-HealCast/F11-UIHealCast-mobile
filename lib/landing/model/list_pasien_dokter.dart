@@ -12,7 +12,7 @@ class PasienDokter {
   String? tanggalJanji;
 
   factory PasienDokter.fromJson(Map<String, dynamic> json) => PasienDokter(
-        pk: json["fields"]["user"],
+        pk: json["pk"],
         keluhan: json["fields"]["keluhan"],
         tanggalJanji: json["fields"]["tanggal_janji"],
         username: json["fields"]["username"],
