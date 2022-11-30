@@ -1,3 +1,4 @@
+import 'package:f11uihealcast/landing/components/drawer_unlogin.dart';
 import 'package:f11uihealcast/main.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: const Text("Login to your Account"),
       ),
+      drawer: DrawerUnlogin(),
       body: Form(
         key: _loginFormKey,
         child: SingleChildScrollView(
@@ -126,8 +128,9 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const MyHomePage(title: "UI Heath Care"),
+                          builder: (BuildContext context) => response["statDok"]
+                              ? const MyHomePage(title: "Dokter")
+                              : const MyHomePage(title: "Pasien"),
                         ));
                   }
                 }
