@@ -17,7 +17,7 @@ class ShowLog {
   factory ShowLog.fromJson(Map<String, dynamic> json) => ShowLog(
         pk: json["pk"],
         keluhan: json["fields"]["keluhan"],
-        tanggalJanji: json["fields"]["tanggal_anji"],
+        tanggalJanji: json["fields"]["tanggal_janji"],
         noHP: json["fields"]["noHP"],
         status: json["fields"]["status"],
         usernameDokter: json["fields"]["usernameDokter"],

@@ -18,7 +18,7 @@ class _PelayananDokterState extends State<PelayananDokterPage> {
       appBar: AppBar(
         title: const Text('Form Pelayanan Dokter'),
       ),
-      drawer: const MyDrawer(),
+      drawer: const DrawerPasien(),
       body: FormPelayananDokter(formKey: _formKey),
     );
   }

@@ -31,12 +31,12 @@ Future<List<ShowLog>> fetchLog(request) async {
   var data = response;
 
   // melakukan konversi data json menjadi object ToDo
-  List<ShowLog> dataDokter = [];
+  List<ShowLog> log = [];
 
   for (var d in data) {
     if (d != null) {
-      dataDokter.add(ShowLog.fromJson(d));
+      log.add(ShowLog.fromJson(d));
     }
   }
-  return dataDokter;
+  return log;
 }
