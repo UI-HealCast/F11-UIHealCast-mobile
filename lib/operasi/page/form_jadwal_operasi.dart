@@ -24,7 +24,7 @@ class _FormJadwalOperasi extends State<FormJadwalOperasi> {
 
   List<Pasien>? listPasien;
 
-  @overridegit 
+  @override
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
     return Scaffold(
