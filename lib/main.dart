@@ -7,6 +7,8 @@ import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:f11uihealcast/landing/page/login_page.dart';
 
+import 'operasi/page/form_jadwal_operasi.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,6 +33,7 @@ class MyApp extends StatelessWidget {
           "/pelayananDokter": (BuildContext context) =>
               const PelayananDokterPage(),
           '/home': (BuildContext context) => const MyHomePage(title: "-"),
+          '/formoperasi': (BuildContext context) => const FormJadwalOperasi(),
         },
         initialRoute: "/home",
       ),

@@ -1,6 +1,7 @@
 import 'package:f11uihealcast/landing/api/landing_api.dart';
 import 'package:f11uihealcast/landing/page/list_pasien.dart';
 import 'package:f11uihealcast/main.dart';
+import 'package:f11uihealcast/operasi/page/form_jadwal_operasi.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
@@ -35,6 +36,16 @@ class DrawerDokter extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const ListPasienPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Buat Jadwal Operasi'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const FormJadwalOperasi()),
               );
             },
           ),
