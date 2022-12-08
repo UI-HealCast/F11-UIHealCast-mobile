@@ -41,3 +41,7 @@ addOperasi(request, pasien, tanggal, jam, keterangan) async {
   return response['status'];
 }
 
+deleteOperasi(request, pk) async {
+  var response =await request.get('http://localhost:8000/operasi/delete/$pk');
+  return response['status'];
+}

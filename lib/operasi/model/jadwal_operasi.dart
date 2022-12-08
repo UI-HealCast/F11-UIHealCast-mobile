@@ -27,7 +27,7 @@ class JadwalOperasi {
     String usernameDokter;
     int pasien;
     String usernamePasien;
-    DateTime tanggal;
+    String tanggal;
     String jam;
     String keterangan;
 
@@ -39,7 +39,7 @@ class JadwalOperasi {
         usernameDokter: json["fields"]["usernameDokter"],
         pasien: json["fields"]["pasien"],
         usernamePasien: json["fields"]["usernamePasien"],
-        tanggal: DateTime.parse(json["fields"]["tanggal"]),
+        tanggal: json["fields"]["tanggal"] as String,
         jam: json["fields"]["jam"],
         keterangan: json["fields"]["keterangan"],
     );
@@ -51,7 +51,7 @@ class JadwalOperasi {
         "usernameDokter": usernameDokter,
         "pasien": pasien,
         "usernamePasien": usernamePasien,
-        "tanggal": "${tanggal.year.toString().padLeft(4, '0')}-${tanggal.month.toString().padLeft(2, '0')}-${tanggal.day.toString().padLeft(2, '0')}",
+        "tanggal": tanggal,
         "jam": jam,
         "keterangan": keterangan,
     };

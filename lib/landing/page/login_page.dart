@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               onPressed: () async {
                 final response =
-                    await request.login("http://10.0.2.2:8000/login/", {
+                    await request.login("http://localhost:8000/login/", {
                   'username': username,
                   'password': password1,
                 });

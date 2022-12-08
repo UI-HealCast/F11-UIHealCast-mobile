@@ -1,5 +1,6 @@
 import 'package:f11uihealcast/landing/components/drawer_dokter.dart';
 import 'package:f11uihealcast/operasi/model/pasien.dart';
+import 'package:f11uihealcast/operasi/page/jadwal_operasi_dokter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
@@ -159,7 +160,6 @@ class _FormJadwalOperasi extends State<FormJadwalOperasi> {
                       child: TextFormField(
                         keyboardType: TextInputType.multiline,
                         minLines: 1,//Normal textInputField will be displayed
-                        maxLines: 5,// when user presses enter it will adapt to it
                         decoration: InputDecoration(
                           hintText: "Masukkan Keterangan",
                           labelText: "Keterangan",
@@ -193,12 +193,14 @@ class _FormJadwalOperasi extends State<FormJadwalOperasi> {
                       ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          addOperasi(request, pasien, tanggal, jam, keterangan);
+                          String stringJam = '${jam?.hour}:${jam?.minute}:00';
+                          String stringTanggal = '${tanggal?.year}-${tanggal?.month}-${tanggal?.day}';
+                          addOperasi(request, pasien, stringTanggal, stringJam, keterangan);
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const FormJadwalOperasi()),
+                                    const JadwalOperasiDokter()),
                           );
                         }
                       },
