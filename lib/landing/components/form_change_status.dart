@@ -1,22 +1,21 @@
 import 'package:f11uihealcast/landing/api/landing_api.dart';
-import 'package:f11uihealcast/landing/page/feedback_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 
-class ListPasien extends StatefulWidget {
-  const ListPasien({super.key});
+class FormChangeStatus extends StatefulWidget {
+  const FormChangeStatus({super.key});
 
   @override
-  State<ListPasien> createState() => _ListPasienState();
+  State<FormChangeStatus> createState() => _ChangeState();
 }
 
-class _ListPasienState extends State<ListPasien> {
+class _ChangeState extends State<FormChangeStatus> {
   @override
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
     return FutureBuilder(
-      future: fetchListPasien(request),
+      future: fetchDokter(request),
       builder: (context, AsyncSnapshot snapshot) {
         if (snapshot.data == null) {
           return const Center(child: CircularProgressIndicator());
@@ -25,7 +24,7 @@ class _ListPasienState extends State<ListPasien> {
             return Column(
               children: const [
                 Text(
-                  "Tidak ada Pasien :(",
+                  "Tidak ada Dokter :(",
                   style: TextStyle(color: Color(0xff59A5D8), fontSize: 20),
                 ),
                 SizedBox(height: 8),
@@ -38,18 +37,18 @@ class _ListPasienState extends State<ListPasien> {
               itemCount: snapshot.data!.length,
               itemBuilder: (_, index) => GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              FeedBackPage(data: snapshot.data![index])));
+                  setState(() {
+                    changStatus(request);
+                  });
                 },
                 child: Container(
                   margin:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   padding: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: snapshot.data![index].ready
+                          ? Colors.green
+                          : Colors.red,
                       borderRadius: BorderRadius.circular(15.0),
                       boxShadow: const [
                         BoxShadow(color: Colors.black, blurRadius: 2.0)
@@ -57,13 +56,19 @@ class _ListPasienState extends State<ListPasien> {
                   child: Column(children: [
                     Row(
                       children: [
-                        Text(snapshot.data![index].username),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(snapshot.data![index].tanggalJanji
-                            .substring(0, 10)),
+                        snapshot.data![index].ready
+                            ? const Text(
+                                "Status Dokter : Tersedia",
+                                style: TextStyle(
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.bold),
+                              )
+                            : const Text(
+                                "Status Dokter : Tidak Tersedia",
+                                style: TextStyle(
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.bold),
+                              )
                       ],
                     ),
                   ]),
