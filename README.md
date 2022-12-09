@@ -15,6 +15,9 @@ Arsitektur Kesehatan menjadi salah satu isu penting yang dibahas dalam Presidens
 <br/>
 <br/>
 Permasalahan sulitnya mendapatkan informasi pelayanan kesehatan membawa kita pada solusi berupa aplikasi sistem informasi kesehatan. Sistem informasi kesehatan ini terintegrasi dengan pihak penyedia jasa dan fasilitas kesehatan agar memudahkan masyarakat dalam mendapatkan informasi dan pelayanan secara efisien. Seiring berkembangnya teknologi, aplikasi mobile menjadi pilihan utama karena penggunaannya yang lebih mudah dan efisien. Oleh karena itu, kelompok kami melakukan pengembangan terhadap aplikasi UIHealCast yang sudah dibentuk pada proyek tengah semester menjadi aplikasi berbasis mobile yang bernama UIHealCast Mobile. Aplikasi UIHealCast Mobile dapat membantu pasien RS UI dan Klinik Makara dalam mendapatkan informasi dan pelayanan kesehatan.
+
+## 📱 Aplikasi 📱
+Saat ini, hanya tersedia versi Android (APK) untuk diunduh. File APK dapat diunduh di bagian [_releases_](https://github.com/UI-HealCast/F11-UIHealCast-mobile/releases) atau melalui [Microsoft Visual Studio App Center](https://install.appcenter.ms/orgs/uihealcast/apps/uihealcast/distribution_groups/public).
  
 ## 👨‍💻 Pengembang 👩‍💻
 Proyek ini dibuat oleh kelompok F11 yang beranggotakan sebagai berikut:
