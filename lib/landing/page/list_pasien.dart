@@ -1,5 +1,6 @@
 import 'package:f11uihealcast/landing/components/container_list_pasien.dart';
 import 'package:f11uihealcast/landing/components/drawer_dokter.dart';
+import 'package:f11uihealcast/landing/components/form_change_status.dart';
 import 'package:flutter/material.dart';
 
 class ListPasienPage extends StatefulWidget {
@@ -17,7 +18,21 @@ class _ListPasienState extends State<ListPasienPage> {
         title: const Text('Menu Pasien'),
       ),
       drawer: const DrawerDokter(),
-      body: const ListPasien(),
+      body: Column(
+        children: [
+          const FormChangeStatus(),
+          const Divider(
+            height: 20,
+            thickness: 5,
+            indent: 0,
+            endIndent: 0,
+            color: Colors.black,
+          ),
+          Flexible(
+            child: const ListPasien(),
+          ),
+        ],
+      ),
     );
   }
 }

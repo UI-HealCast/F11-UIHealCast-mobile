@@ -60,7 +60,7 @@ class _FormRegister extends State<RegisterForm> {
               // Validator sebagai validasi form
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
-                  return 'Email tidak boleh kosong!';
+                  return 'Username tidak boleh kosong!';
                 }
                 return null;
               },
@@ -148,7 +148,7 @@ class _FormRegister extends State<RegisterForm> {
             ),
             onPressed: () async {
               final response = await request.post(
-                  'http://10.0.2.2:8000/register/', {
+                  'https://uihealcast.up.railway.app/register/', {
                 "username": username,
                 "password1": password,
                 "password2": password1
