@@ -1,3 +1,4 @@
+import 'package:f11uihealcast/landing/components/drawer_pasien.dart';
 import 'package:flutter/material.dart';
 import 'package:f11uihealcast/pelayananDokter/component/form_pelayanan_dokter.dart';
 
@@ -17,6 +18,7 @@ class _PelayananDokterState extends State<PelayananDokterPage> {
       appBar: AppBar(
         title: const Text('Form Pelayanan Dokter'),
       ),
+      drawer: const DrawerPasien(),
       body: FormPelayananDokter(formKey: _formKey),
     );
   }

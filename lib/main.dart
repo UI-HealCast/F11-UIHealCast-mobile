@@ -1,4 +1,6 @@
-import 'package:f11uihealcast/landing/components/drawer.dart';
+import 'package:f11uihealcast/landing/components/drawer_dokter.dart';
+import 'package:f11uihealcast/landing/components/drawer_pasien.dart';
+import 'package:f11uihealcast/landing/components/drawer_unlogin.dart';
 import 'package:f11uihealcast/pelayananDokter/page/pelayanan_dokter.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
@@ -28,10 +30,9 @@ class MyApp extends StatelessWidget {
           "/login": (BuildContext context) => const LoginPage(),
           "/pelayananDokter": (BuildContext context) =>
               const PelayananDokterPage(),
-          '/home': (BuildContext context) =>
-              const MyHomePage(title: "UI Heath Care"),
+          '/home': (BuildContext context) => const MyHomePage(title: "-"),
         },
-        initialRoute: "/login",
+        initialRoute: "/home",
       ),
     );
   }
@@ -81,9 +82,14 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: const Text("UIHealCast"),
       ),
-      drawer: const MyDrawer(),
+      drawer: widget.title == "-"
+          ? const DrawerUnlogin()
+          : widget.title == "Dokter"
+              ? const DrawerDokter()
+              : const DrawerPasien(),
+
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

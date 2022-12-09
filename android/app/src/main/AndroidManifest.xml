@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.f11uihealcast">
+    package="com.f11uihealcast">
    <application
         android:label="f11uihealcast"
         android:name="${applicationName}"
