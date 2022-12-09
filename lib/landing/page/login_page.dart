@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: const Text("Login to your Account"),
       ),
-      drawer: DrawerUnlogin(),
+      drawer: const DrawerUnlogin(),
       body: Form(
         key: _loginFormKey,
         child: SingleChildScrollView(
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                 // Validator sebagai validasi form
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return 'Email tidak boleh kosong!';
+                    return 'Username tidak boleh kosong!';
                   }
                   return null;
                 },
@@ -117,8 +117,8 @@ class _LoginPageState extends State<LoginPage> {
                 backgroundColor: MaterialStateProperty.all(Colors.blue),
               ),
               onPressed: () async {
-                final response =
-                    await request.login("http://10.0.2.2:8000/login/", {
+                final response = await request
+                    .login("https://uihealcast.up.railway.app/login/", {
                   'username': username,
                   'password': password1,
                 });
@@ -133,6 +133,20 @@ class _LoginPageState extends State<LoginPage> {
                               : const MyHomePage(title: "Pasien"),
                         ));
                   }
+                } else {
+                  final snackBar = SnackBar(
+                    content: const Text('Masukkan Input yang Valid!'),
+                    action: SnackBarAction(
+                      label: 'Dismiss',
+                      onPressed: () {
+                        // Some code to undo the change.
+                      },
+                    ),
+                  );
+
+                  // Find the ScaffoldMessenger in the widget tree
+                  // and use it to show a SnackBar.
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
             ),

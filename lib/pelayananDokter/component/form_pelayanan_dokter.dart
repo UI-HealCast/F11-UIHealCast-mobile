@@ -80,7 +80,7 @@ class _FormPelayananDokter extends State<FormPelayananDokter> {
                         // Validator sebagai validasi form
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
-                            return 'Judul tidak boleh kosong!';
+                            return 'Keluhan tidak boleh kosong!';
                           }
                           keluhan = value;
                           return null;
@@ -111,10 +111,10 @@ class _FormPelayananDokter extends State<FormPelayananDokter> {
                         },
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
-                            return 'Nominal tidak boleh kosong!';
+                            return 'Nomor HP tidak boleh kosong!';
                           }
                           if (!isNumeric(value)) {
-                            return 'Nominal harus berupa angka!';
+                            return 'Nomor HP harus berupa angka!';
                           }
                           noHP = value;
                           return null;
@@ -129,7 +129,7 @@ class _FormPelayananDokter extends State<FormPelayananDokter> {
                       child: Center(
                         child: DropdownButton<String>(
                           value: _selectDokter,
-                          hint: const Text("Pilih Jenis"),
+                          hint: const Text("Pilih Dokter"),
                           icon: const Icon(Icons.keyboard_arrow_down),
                           items: isReady!.map<DropdownMenuItem<String>>(
                               (DoctorReady value) {
