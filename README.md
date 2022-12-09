@@ -1,6 +1,7 @@
 [![Develop](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/develop.yml/badge.svg)](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/develop.yml)
 [![Pre-Release](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/pre-release.yml/badge.svg)](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/pre-release.yml)
 [![Release](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/release.yml/badge.svg)](https://github.com/UI-HealCast/F11-UIHealCast-mobile/actions/workflows/release.yml)
+[![Build status](https://build.appcenter.ms/v0.1/apps/ef11849e-06e6-4af7-bf12-a8064576b4fd/branches/main/badge)](https://install.appcenter.ms/orgs/uihealcast/apps/uihealcast/distribution_groups/public)
 
 # UI HealCast
 
