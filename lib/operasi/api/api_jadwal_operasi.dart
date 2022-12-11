@@ -44,6 +44,6 @@ addOperasi(request, pasien, tanggal, jam, keterangan) async {
 }
 
 deleteOperasi(request, pk) async {
-  http.Response response =await http.delete(Uri.parse('https://uihealcast.up.railway.app/operasi/delete/$pk'));
+  var response = await request.get('https://uihealcast.up.railway.app/operasi/delete/$pk');
   return;
 }
