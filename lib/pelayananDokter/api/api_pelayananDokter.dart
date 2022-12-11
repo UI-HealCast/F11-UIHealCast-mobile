@@ -2,7 +2,7 @@ import 'package:f11uihealcast/pelayananDokter/model/doctor_ready.dart';
 import 'package:f11uihealcast/pelayananDokter/model/show_log.dart';
 
 Future<List<DoctorReady>> fetchDokter(request) async {
-  var url = 'http://10.0.2.2:8000/pelayananDokter/show_doc/';
+  var url = 'http://localhost:8000/pelayananDokter/show_doc/';
   var response = await request.get(url);
 
   var data = response;

@@ -1,27 +1,27 @@
 import 'package:f11uihealcast/landing/model/list_pasien_dokter.dart';
 
 register(request, username, password, password1) async {
-  final response = await request.post('http://10.0.2.2:8000/register/',
+  final response = await request.post('http://localhost:8000/register/',
       {"username": username, "password": password, "password1": password1});
   return response['status'];
 }
 
 logout(request) async {
-  var url = 'http://10.0.2.2:8000/logout/';
+  var url = 'http://localhost:8000/logout/';
   var response = await request.get(url);
 
   return true;
 }
 
 modifHasil(request, keluhan, pk) async {
-  final response = await request.post('http://10.0.2.2:8000/modif-hasil/',
+  final response = await request.post('http://localhost:8000/modif-hasil/',
       {"hasil": keluhan, "peka": pk.toString()});
 
   return response["status"];
 }
 
 Future<List<PasienDokter>> fetchListPasien(request) async {
-  var url = 'http://10.0.2.2:8000/list-pasien/';
+  var url = 'http://localhost:8000/list-pasien/';
   var response = await request.get(url);
 
   var data = response;
