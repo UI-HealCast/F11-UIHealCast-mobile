@@ -58,7 +58,8 @@ class ShowKonseling {
         pk: json["pk"],
         nama: json["fields"]["nama"],
         status_user: json["fields"]["status_user"],
-        noHP: json["fields"]["noHP"],
+        // parse to String
+        noHP: json["fields"]["noHP"].toString(),
         email: json["fields"]["email"],
         bentuk_konseling: json["fields"]["bentuk_konseling"],
         keluhan_konseling: json["fields"]["keluhan_konseling"],
