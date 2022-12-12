@@ -3,7 +3,6 @@ import 'package:f11uihealcast/main.dart';
 import 'package:f11uihealcast/operasi/page/jadwal_operasi_pasien.dart';
 import 'package:f11uihealcast/pelayananDokter/page/pelayanan_dokter.dart';
 import 'package:f11uihealcast/pelayananDokter/page/show_log.dart';
-import 'package:f11uihealcast/pembayaran/page/pembayaranPage.dart';
 import 'package:f11uihealcast/pembayaran/page/notesPage.dart';
 import 'package:f11uihealcast/pembayaran/page/ringkasanNotes.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +11,8 @@ import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:f11uihealcast/pelayananKonseling/page/show_konseling.dart';
 import 'package:f11uihealcast/pelayananKonseling/page/pelayanan_konseling.dart';
 
-class DrawerPasien extends StatelessWidget {
-  const DrawerPasien({Key? key}) : super(key: key);
+class DrawerAdmin extends StatelessWidget {
+  const DrawerAdmin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,26 +31,6 @@ class DrawerPasien extends StatelessWidget {
                     builder: (context) => const MyHomePage(
                           title: "Pasien",
                         )),
-              );
-            },
-          ),
-          ListTile(
-            title: const Text('Tambah Bulanan Pembayaran'),
-            onTap: () {
-              // Route menu ke halaman utama
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const NotesAdmin()),
-              );
-            },
-          ),
-          ListTile(
-            title: const Text('Ringkasan Catatan Pembayaran'),
-            onTap: () {
-              // Route menu ke halaman utama
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const Ringkasan()),
               );
             },
           ),
@@ -108,12 +87,22 @@ class DrawerPasien extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Pembayaran'),
+            title: const Text('Tambah Bulanan Pembayaran'),
             onTap: () {
               // Route menu ke halaman utama
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const Pembayaran()),
+                MaterialPageRoute(builder: (context) => const NotesAdmin()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Ringkasan Catatan Pembayaran'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const Ringkasan()),
               );
             },
           ),
