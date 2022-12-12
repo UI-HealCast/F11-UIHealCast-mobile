@@ -6,6 +6,8 @@ import 'package:f11uihealcast/pelayananDokter/page/show_log.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:f11uihealcast/pelayananKonseling/page/show_konseling.dart';
+import 'package:f11uihealcast/pelayananKonseling/page/pelayanan_konseling.dart';
 
 class DrawerPasien extends StatelessWidget {
   const DrawerPasien({Key? key}) : super(key: key);
@@ -42,12 +44,32 @@ class DrawerPasien extends StatelessWidget {
             },
           ),
           ListTile(
+            title: const Text('Pelayanan Konseling'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const KonselingPage()),
+              );
+            },
+          ),
+          ListTile(
             title: const Text('History Pelayanan Dokter'),
             onTap: () {
               // Route menu ke halaman utama
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const ShowLogPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('History Konseling'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const PelayananKonselingPage()),
               );
             },
           ),
