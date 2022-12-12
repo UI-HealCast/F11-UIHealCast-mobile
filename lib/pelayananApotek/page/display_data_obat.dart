@@ -3,7 +3,13 @@ import 'package:f11uihealcast/pelayananApotek/api/fetch_data_obat.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
-import 'dart:convert';
+
+// void editStatus(request, pk) async {
+//   var data = convert.jsonEncode(<String, String?>{
+//     "status_obat": statusObat,
+//   });
+
+// }
 
 class DisplayObatPage extends StatefulWidget {
   const DisplayObatPage({Key? key}) : super(key: key);
@@ -59,9 +65,9 @@ class _DisplayObatState extends State<DisplayObatPage> {
                                         ? "Tersedia"
                                         : "Tidak tersedia")),
                                 IconButton(
-                                    icon: Icon(Icons.delete),
+                                    icon: Icon(Icons.change_circle_outlined),
                                     onPressed: () {
-                                      deleteObat(
+                                      editStatusObat(
                                           request, snapshot.data![index].pk);
                                       setState(() {});
                                       Navigator.pushReplacement(
@@ -69,6 +75,18 @@ class _DisplayObatState extends State<DisplayObatPage> {
                                           MaterialPageRoute(
                                               builder: (context) =>
                                                   const DisplayObatPage()));
+                                    }),
+                                IconButton(
+                                    icon: Icon(Icons.delete),
+                                    onPressed: () {
+                                      deleteObat(
+                                          request, snapshot.data![index].pk);
+                                      setState(() {});
+                                      // Navigator.pushReplacement(
+                                      //     context,
+                                      //     MaterialPageRoute(
+                                      //         builder: (context) =>
+                                      //             const DisplayObatPage()));
                                     }),
                               ],
                             ))),

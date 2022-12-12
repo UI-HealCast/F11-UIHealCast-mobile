@@ -1,6 +1,8 @@
 import 'package:f11uihealcast/pelayananApotek/component/drawer.dart';
 import 'package:f11uihealcast/pelayananApotek/api/fetch_data_pasien.dart';
 import 'package:flutter/material.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class DisplayStatusObatPage extends StatefulWidget {
   const DisplayStatusObatPage({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class DisplayStatusObatPage extends StatefulWidget {
 class _DisplayStatusObatState extends State<DisplayStatusObatPage> {
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Data Pasien"),
@@ -45,8 +48,7 @@ class _DisplayStatusObatState extends State<DisplayStatusObatPage> {
                             padding: const EdgeInsets.all(10.0),
                             child: Align(
                               alignment: Alignment.topLeft,
-                              child: Text(
-                                  "${snapshot.data![index].fields.username}",
+                              child: Text("${snapshot.data![index].username}",
                                   style: const TextStyle(fontSize: 25),
                                   textAlign: TextAlign.left),
                             ),
@@ -59,7 +61,7 @@ class _DisplayStatusObatState extends State<DisplayStatusObatPage> {
                                   child: Align(
                                     alignment: Alignment.topLeft,
                                     child: Text(
-                                        "Dokter: ${snapshot.data![index].fields.usernameDokter}",
+                                        "Dokter: ${snapshot.data![index].usernameDokter}",
                                         style: const TextStyle(fontSize: 15),
                                         textAlign: TextAlign.left),
                                   ),
@@ -69,8 +71,9 @@ class _DisplayStatusObatState extends State<DisplayStatusObatPage> {
                                   child: Align(
                                     alignment: Alignment.topRight,
                                     child: Text(
-                                        // "${snapshot.data![index].fields.statusObat}",
-                                        "Obat belum bisa diambil",
+                                        snapshot.data![index].statusObat
+                                            ? "Obat sudah bisa diambil"
+                                            : "Obat belum bisa diambil",
                                         style: const TextStyle(fontSize: 15),
                                         textAlign: TextAlign.right),
                                   ),
@@ -82,7 +85,16 @@ class _DisplayStatusObatState extends State<DisplayStatusObatPage> {
                               alignment: Alignment.topCenter,
                               child: TextButton(
                                 child: Text("Ubah Status"),
-                                onPressed: () {},
+                                onPressed: () {
+                                  editStatusObatPasien(
+                                      request, snapshot.data![index].pk);
+                                  setState(() {});
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const DisplayStatusObatPage()));
+                                },
                               ),
                             ),
                           ),

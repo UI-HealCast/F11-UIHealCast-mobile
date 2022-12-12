@@ -9,25 +9,35 @@ String pasienToJson(List<Pasien> data) =>
 
 class Pasien {
   Pasien({
-    required this.model,
+    //required this.model,
     required this.pk,
-    required this.fields,
+    required this.username,
+    required this.usernameDokter,
+    required this.statusObat,
+    //required this.fields,
   });
 
-  String model;
+  //String model;
   int pk;
-  Fields fields;
+  //Fields fields;
+  String username;
+  String usernameDokter;
+  bool statusObat;
 
   factory Pasien.fromJson(Map<String, dynamic> json) => Pasien(
-        model: json["model"],
+        //model: json["model"],
         pk: json["pk"],
-        fields: Fields.fromJson(json["fields"]),
+        username: json["fields"]["username"],
+        usernameDokter: json["fields"]["usernameDokter"],
+        statusObat: json["fields"]["statusObat"],
+        //fields: Fields.fromJson(json["fields"]),
       );
 
   Map<String, dynamic> toJson() => {
-        "model": model,
         "pk": pk,
-        "fields": fields.toJson(),
+        "username": username,
+        "usernameDokter": usernameDokter,
+        "statusObat": statusObat,
       };
 
   static Future<List<Pasien>> fetchPasien() async {
@@ -54,25 +64,30 @@ class Pasien {
   }
 }
 
-class Fields {
-  Fields({
-    required this.username,
-    required this.usernameDokter,
-    required this.statusObat,
-  });
-
-  String username;
-  String usernameDokter;
-  bool statusObat;
-
-  factory Fields.fromJson(Map<String, dynamic> json) => Fields(
-        username: json["username"],
-        usernameDokter: json["usernameDokter"],
-        statusObat: json["statusObat"],
-      );
-  Map<String, dynamic> toJson() => {
-        "username": username,
-        "usernameDokter": usernameDokter,
-        "statusObat": statusObat,
-      };
+editStatusObatPasien(request, pk) async {
+  var response = await request.get(
+      'http://localhost:8000/pelayananApotek/change_status_pasien_flutter/${pk}');
+  return response;
 }
+// class Fields {
+//   Fields({
+//     required this.username,
+//     required this.usernameDokter,
+//     required this.statusObat,
+//   });
+
+//   String username;
+//   String usernameDokter;
+//   bool statusObat;
+
+//   factory Fields.fromJson(Map<String, dynamic> json) => Fields(
+//         username: json["username"],
+//         usernameDokter: json["usernameDokter"],
+//         statusObat: json["statusObat"],
+//       );
+//   Map<String, dynamic> toJson() => {
+//         "username": username,
+//         "usernameDokter": usernameDokter,
+//         "statusObat": statusObat,
+//       };
+// }

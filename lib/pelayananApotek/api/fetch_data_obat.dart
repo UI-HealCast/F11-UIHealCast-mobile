@@ -75,7 +75,6 @@ addObat(request, namaObat, deskripsi, harga) async {
       {'nama_obat': namaObat, 'description': deskripsi, 'harga': harga});
   return response;
 }
-
 // updateStatusObat(request, statusObat, pk)
 
 deleteObat(request, pk) async {
@@ -84,6 +83,11 @@ deleteObat(request, pk) async {
   return;
 }
 
+editStatusObat(request, pk) async {
+  var response = await request.get(
+      'http://localhost:8000/pelayananApotek/change_status_obat_flutter/${pk}');
+  return response;
+}
 // class Fields {
 //   Fields({
 //     required this.namaObat,
