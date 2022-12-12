@@ -9,28 +9,22 @@ String pasienToJson(List<Pasien> data) =>
 
 class Pasien {
   Pasien({
-    //required this.model,
     required this.pk,
     required this.username,
     required this.usernameDokter,
     required this.statusObat,
-    //required this.fields,
   });
 
-  //String model;
   int pk;
-  //Fields fields;
   String username;
   String usernameDokter;
   bool statusObat;
 
   factory Pasien.fromJson(Map<String, dynamic> json) => Pasien(
-        //model: json["model"],
         pk: json["pk"],
         username: json["fields"]["username"],
         usernameDokter: json["fields"]["usernameDokter"],
         statusObat: json["fields"]["statusObat"],
-        //fields: Fields.fromJson(json["fields"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -41,8 +35,8 @@ class Pasien {
       };
 
   static Future<List<Pasien>> fetchPasien() async {
-    var url =
-        Uri.parse('http://localhost:8000/pelayananApotek/show_patient_json');
+    var url = Uri.parse(
+        'http://uihealcast.up.railway.app/pelayananApotek/show_patient_json');
     var response = await http.get(
       url,
       headers: {
@@ -66,28 +60,12 @@ class Pasien {
 
 editStatusObatPasien(request, pk) async {
   var response = await request.get(
-      'http://localhost:8000/pelayananApotek/change_status_pasien_flutter/${pk}');
+      'http://uihealcast.up.railway.app/pelayananApotek/change_status_pasien_flutter/${pk}');
   return response;
 }
-// class Fields {
-//   Fields({
-//     required this.username,
-//     required this.usernameDokter,
-//     required this.statusObat,
-//   });
 
-//   String username;
-//   String usernameDokter;
-//   bool statusObat;
-
-//   factory Fields.fromJson(Map<String, dynamic> json) => Fields(
-//         username: json["username"],
-//         usernameDokter: json["usernameDokter"],
-//         statusObat: json["statusObat"],
-//       );
-//   Map<String, dynamic> toJson() => {
-//         "username": username,
-//         "usernameDokter": usernameDokter,
-//         "statusObat": statusObat,
-//       };
-// }
+Future<bool> getUserStatus(request) async {
+  var response = await request
+      .get('http://uihealcast.up.railway.app/pelayananApotek/get_user');
+  return response;
+}

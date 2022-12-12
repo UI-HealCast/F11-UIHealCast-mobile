@@ -4,13 +4,6 @@ import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:f11uihealcast/landing/components/drawer_apoteker.dart';
 
-// void editStatus(request, pk) async {
-//   var data = convert.jsonEncode(<String, String?>{
-//     "status_obat": statusObat,
-//   });
-
-// }
-
 class DisplayObatPage extends StatefulWidget {
   const DisplayObatPage({Key? key}) : super(key: key);
 

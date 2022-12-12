@@ -47,7 +47,8 @@ class Obat {
       };
 
   static Future<List<Obat>> fetchObat() async {
-    var url = Uri.parse('http://localhost:8000/pelayananApotek/json');
+    var url =
+        Uri.parse('http://uihealcast.up.railway.app/pelayananApotek/json');
     var response = await http.get(
       url,
       headers: {
@@ -71,46 +72,20 @@ class Obat {
 
 addObat(request, namaObat, deskripsi, harga) async {
   var response = await request.post(
-      'http://localhost:8000/pelayananApotek/add_obat/',
+      'http://uihealcast.up.railway.app/pelayananApotek/add_obat/',
       {'nama_obat': namaObat, 'description': deskripsi, 'harga': harga});
   return response;
 }
 // updateStatusObat(request, statusObat, pk)
 
 deleteObat(request, pk) async {
-  var response = await request
-      .get('http://localhost:8000/pelayananApotek/delete_obat_flutter/${pk}');
+  var response = await request.get(
+      'http://uihealcast.up.railway.app/pelayananApotek/delete_obat_flutter/${pk}');
   return;
 }
 
 editStatusObat(request, pk) async {
   var response = await request.get(
-      'http://localhost:8000/pelayananApotek/change_status_obat_flutter/${pk}');
+      'http://uihealcast.up.railway.app/pelayananApotek/change_status_obat_flutter/${pk}');
   return response;
 }
-// class Fields {
-//   Fields({
-//     required this.namaObat,
-//     required this.deskripsi,
-//     required this.harga,
-//     required this.statusObat,
-//   });
-
-//   String namaObat;
-//   String deskripsi;
-//   int harga;
-//   bool statusObat;
-
-//   factory Fields.fromJson(Map<String, dynamic> json) => Fields(
-//         namaObat: json["nama_obat"],
-//         deskripsi: json["description"],
-//         harga: json["harga"],
-//         statusObat: json["status_obat"],
-//       );
-//   Map<String, dynamic> toJson() => {
-//         "nama_obat": namaObat,
-//         "description": deskripsi,
-//         "harga": harga,
-//         "status_obat": statusObat,
-//       };
-// }
