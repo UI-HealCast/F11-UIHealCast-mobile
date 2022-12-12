@@ -1,15 +1,17 @@
 import 'package:f11uihealcast/landing/api/landing_api.dart';
 import 'package:f11uihealcast/main.dart';
 import 'package:f11uihealcast/operasi/page/jadwal_operasi_pasien.dart';
-import 'package:f11uihealcast/pelayananApotek/page/data_obat_view_only.dart';
+import 'package:f11uihealcast/pelayananApotek/component/form_obat.dart';
 import 'package:f11uihealcast/pelayananDokter/page/pelayanan_dokter.dart';
 import 'package:f11uihealcast/pelayananDokter/page/show_log.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:f11uihealcast/pelayananApotek/page/display_data_obat.dart';
+import 'package:f11uihealcast/pelayananApotek/page/display_status_obat.dart';
 
-class DrawerPasien extends StatelessWidget {
-  const DrawerPasien({Key? key}) : super(key: key);
+class DrawerApoteker extends StatelessWidget {
+  const DrawerApoteker({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class DrawerPasien extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => const MyHomePage(
-                          title: "Pasien",
+                          title: "Apoteker",
                         )),
               );
             },
@@ -64,26 +66,37 @@ class DrawerPasien extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Lihat Data Obat'),
+            title: const Text('Tambah Obat'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const FormObatPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Update Data Obat'),
             onTap: () {
               // Route menu ke halaman utama
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const ViewOnlyObatPage()),
+                    builder: (context) => const DisplayObatPage()),
               );
             },
           ),
-          // ListTile(
-          //   title: const Text('Lihat Data Obat'),
-          //   onTap: () {
-          //     // Route menu ke halaman utama
-          //     Navigator.pushReplacement(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => const ViewOnlyObatPage()),
-          //     );
-          //   },
-          // ),
+          ListTile(
+            title: const Text('Update Status Obat Pasien'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const DisplayStatusObatPage()),
+              );
+            },
+          ),
           ListTile(
             title: const Text('Logout'),
             onTap: () {

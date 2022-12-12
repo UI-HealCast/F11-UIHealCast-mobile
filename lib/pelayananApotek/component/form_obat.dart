@@ -1,4 +1,4 @@
-import 'package:f11uihealcast/pelayananApotek/component/drawer.dart';
+import 'package:f11uihealcast/landing/components/drawer_apoteker.dart';
 import 'package:f11uihealcast/pelayananApotek/api/fetch_data_obat.dart';
 import 'package:f11uihealcast/pelayananApotek/page/display_data_obat.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class _FormObatState extends State<FormObatPage> {
         appBar: AppBar(
           title: const Text('Form Obat'),
         ),
-        drawer: buildDrawer(context),
+        drawer: const DrawerApoteker(),
         body: Form(
             key: _formKey,
             child: SingleChildScrollView(

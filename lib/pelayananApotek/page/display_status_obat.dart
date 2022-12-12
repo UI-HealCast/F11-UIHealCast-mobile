@@ -1,8 +1,8 @@
-import 'package:f11uihealcast/pelayananApotek/component/drawer.dart';
 import 'package:f11uihealcast/pelayananApotek/api/fetch_data_pasien.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:f11uihealcast/landing/components/drawer_apoteker.dart';
 
 class DisplayStatusObatPage extends StatefulWidget {
   const DisplayStatusObatPage({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _DisplayStatusObatState extends State<DisplayStatusObatPage> {
       appBar: AppBar(
         title: const Text("Data Pasien"),
       ),
-      drawer: buildDrawer(context),
+      drawer: const DrawerApoteker(),
       body: FutureBuilder(
           future: Pasien.fetchPasien(),
           builder: (context, AsyncSnapshot snapshot) {

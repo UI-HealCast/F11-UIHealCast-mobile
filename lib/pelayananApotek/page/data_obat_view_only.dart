@@ -1,24 +1,17 @@
+import 'package:f11uihealcast/landing/components/drawer_pasien.dart';
 import 'package:f11uihealcast/pelayananApotek/api/fetch_data_obat.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
-import 'package:f11uihealcast/landing/components/drawer_apoteker.dart';
 
-// void editStatus(request, pk) async {
-//   var data = convert.jsonEncode(<String, String?>{
-//     "status_obat": statusObat,
-//   });
-
-// }
-
-class DisplayObatPage extends StatefulWidget {
-  const DisplayObatPage({Key? key}) : super(key: key);
+class ViewOnlyObatPage extends StatefulWidget {
+  const ViewOnlyObatPage({Key? key}) : super(key: key);
 
   @override
   _DisplayObatState createState() => _DisplayObatState();
 }
 
-class _DisplayObatState extends State<DisplayObatPage> {
+class _DisplayObatState extends State<ViewOnlyObatPage> {
   @override
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
@@ -26,7 +19,7 @@ class _DisplayObatState extends State<DisplayObatPage> {
         appBar: AppBar(
           title: const Text("Data Obat"),
         ),
-        drawer: const DrawerApoteker(),
+        drawer: const DrawerPasien(),
         body: FutureBuilder(
             future: Obat.fetchObat(),
             builder: (context, AsyncSnapshot snapshot) {
@@ -64,30 +57,6 @@ class _DisplayObatState extends State<DisplayObatPage> {
                                     child: Text(snapshot.data![index].statusObat
                                         ? "Tersedia"
                                         : "Tidak tersedia")),
-                                IconButton(
-                                    icon: Icon(Icons.change_circle_outlined),
-                                    onPressed: () {
-                                      editStatusObat(
-                                          request, snapshot.data![index].pk);
-                                      setState(() {});
-                                      Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const DisplayObatPage()));
-                                    }),
-                                IconButton(
-                                    icon: Icon(Icons.delete),
-                                    onPressed: () {
-                                      deleteObat(
-                                          request, snapshot.data![index].pk);
-                                      setState(() {});
-                                      // Navigator.pushReplacement(
-                                      //     context,
-                                      //     MaterialPageRoute(
-                                      //         builder: (context) =>
-                                      //             const DisplayObatPage()));
-                                    }),
                               ],
                             ))),
                       );
