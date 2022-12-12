@@ -35,8 +35,8 @@ class Pasien {
       };
 
   static Future<List<Pasien>> fetchPasien() async {
-    var url = Uri.parse(
-        'http://uihealcast.up.railway.app/pelayananApotek/show_patient_json');
+    var url =
+        Uri.parse('http://localhost:8000/pelayananApotek/show_patient_json');
     var response = await http.get(
       url,
       headers: {
@@ -60,12 +60,12 @@ class Pasien {
 
 editStatusObatPasien(request, pk) async {
   var response = await request.get(
-      'http://uihealcast.up.railway.app/pelayananApotek/change_status_pasien_flutter/${pk}');
+      'http://localhost:8000/pelayananApotek/change_status_pasien_flutter/${pk}');
   return response;
 }
 
 Future<bool> getUserStatus(request) async {
-  var response = await request
-      .get('http://uihealcast.up.railway.app/pelayananApotek/get_user');
+  var response =
+      await request.get('http://localhost:8000/pelayananApotek/get_user');
   return response;
 }
