@@ -8,7 +8,6 @@ import 'package:pbp_django_auth/pbp_django_auth.dart';
 
 class FormNotesAdmin extends StatefulWidget {
   const FormNotesAdmin({super.key, this.formKey});
-  // final NotesBayar myNotes;
 
   final formKey;
 
@@ -17,56 +16,17 @@ class FormNotesAdmin extends StatefulWidget {
 }
 
 class _FormNotesAdmin extends State<FormNotesAdmin> {
-  final formKey = GlobalKey<FormState>();
+  get formKey => widget.formKey;
 
-  // get formKey => widget.formKey;
+  String? pilihBulan;
+  String? keterangan;
 
-  String pilihBulan = "";
-  List<String> listBulan = [
-    'Januari',
-    'Februari',
-    'Maret',
-    'April',
-    'Mei',
-    'Juni',
-    'Juli',
-    'Agustus',
-    'September',
-    'Oktober',
-    'November',
-    'Desember'
-  ];
-
-  String keterangan = "";
-
-  // void _initSubmitComment(request) async {
-  //   final response = await request.post(
-  //       "https://uihealcast.up.railway.app/pembayaran/keterangan/add/${widget.myForum.pk}/",
-  //       {
-  //         'bulan': bulan,
-  //         'keterangan': keterangan,
-  //       }).then((value) {
-  //     final newValue = new Map<String, dynamic>.from(value);
-  //     print(newValue['status'].toString());
-  //     setState(() {
-  //       if (newValue['status'].toString() == "success") {
-  //         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-  //           content: Text("Success add comment!"),
-  //           backgroundColor: Colors.indigo,
-  //         ));
-  //         Navigator.pushReplacement(
-  //           context,
-  //           MaterialPageRoute(
-  //               builder: (context) => ForumPostDetail(myForum: widget.myForum)),
-  //         );
-  //       } else
-  //         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-  //           content: Text("Failed add comment"),
-  //           backgroundColor: Colors.redAccent,
-  //         ));
-  //     });
-  //   });
-  // }
+  bool isNumeric(String value) {
+    if (value == null) {
+      return false;
+    }
+    return int.tryParse(value) != null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -186,65 +146,6 @@ class _FormNotesAdmin extends State<FormNotesAdmin> {
                         },
                       ),
                     ),
-                    // Expanded(
-                    //     child: Align(
-                    //   alignment: Alignment.bottomCenter,
-                    //   child: TextButton(
-                    //     onPressed: () {
-                    //       if (formKey.currentState!.validate()) {
-                    //         NotesAdmin.addNotes(
-                    //           judul: _judul,
-                    //           nominal: _nominal,
-                    //           tipe: _tipe,
-                    //           date: _date,
-                    //         );
-                    //         showDialog(
-                    //           context: context,
-                    //           builder: (context) {
-                    //             return Dialog(
-                    //               shape: RoundedRectangleBorder(
-                    //                 borderRadius: BorderRadius.circular(10),
-                    //               ),
-                    //               elevation: 15,
-                    //               child: ListView(
-                    //                 padding: const EdgeInsets.symmetric(
-                    //                   horizontal: 20.0,
-                    //                   vertical: 16.0,
-                    //                 ),
-                    //                 shrinkWrap: true,
-                    //                 children: [
-                    //                   Center(
-                    //                     child: Text(
-                    //                       "Berhasil menambahkan $_tipe $_judul sebesar ${_nominal.toString()}\n",
-                    //                       textAlign: TextAlign.center,
-                    //                     ),
-                    //                   ),
-                    //                   TextButton(
-                    //                     onPressed: () {
-                    //                       Navigator.pop(context);
-                    //                     },
-                    //                     child: const Text('Kembali'),
-                    //                   )
-                    //                 ],
-                    //               ),
-                    //             );
-                    //           },
-                    //         );
-                    //         _formKey.currentState!.reset();
-                    //       }
-                    //     },
-                    //     style: ButtonStyle(
-                    //       padding: MaterialStateProperty.all(
-                    //           const EdgeInsets.all(12.0)),
-                    //       backgroundColor:
-                    //           MaterialStateProperty.all(Colors.blue),
-                    //     ),
-                    //     child: const Text(
-                    //       "Simpan",
-                    //       style: TextStyle(color: Colors.white),
-                    //     ),
-                    //   ),
-                    // ))
                     TextButton(
                       child: const Text(
                         "Simpan",

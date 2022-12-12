@@ -47,13 +47,17 @@ class _RingkasanFormState extends State<RingkasanForm> {
                             ]),
                         child: Column(children: [
                           Row(
-                            children: [Text(snapshot.data![index].fields.bulan)],
+                            children: [
+                              Text(snapshot.data![index].fields.bulan)
+                            ],
                           ),
                           const SizedBox(
                             height: 8,
                           ),
                           Row(
-                            children: [Text(snapshot.data![index].fields.keterangan)],
+                            children: [
+                              Text(snapshot.data![index].fields.keterangan)
+                            ],
                           ),
                         ]),
                       ));

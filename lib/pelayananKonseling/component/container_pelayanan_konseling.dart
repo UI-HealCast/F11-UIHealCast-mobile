@@ -1,21 +1,21 @@
-import 'package:f11uihealcast/pembayaran/api/fetch.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:f11uihealcast/pelayananKonseling/api/api_pelayananKonseling.dart';
 
-class PembayaranPage extends StatefulWidget {
-  const PembayaranPage({super.key});
+class ListPelayananKonseling extends StatefulWidget {
+  const ListPelayananKonseling({super.key});
 
   @override
-  State<PembayaranPage> createState() => _PembayaranPageState();
+  State<ListPelayananKonseling> createState() => _ListPelayananKonselingState();
 }
 
-class _PembayaranPageState extends State<PembayaranPage> {
+class _ListPelayananKonselingState extends State<ListPelayananKonseling> {
   @override
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
     return FutureBuilder(
-      future: fetchPembayaran(request),
+      future: fetchKonseling(request),
       builder: (context, AsyncSnapshot snapshot) {
         if (snapshot.data == null) {
           return const Center(child: CircularProgressIndicator());
@@ -24,19 +24,19 @@ class _PembayaranPageState extends State<PembayaranPage> {
             return Column(
               children: const [
                 Text(
-                  "Tidak ada transaksi",
-                  style: TextStyle(color: Color(0xff59A5D8), fontSize: 20),
+                  "Tidak ada History Konseling untuk saat ini",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 48, 8, 82), fontSize: 40),
                 ),
                 SizedBox(height: 8),
               ],
             );
           } else {
-            // ini harus diubah jadi return listview builder
             return ListView.builder(
-              itemCount: snapshot.data!.length,
+              itemCount: snapshot.data?.length,
               itemBuilder: (_, index) => ListTile(
                   trailing: Checkbox(
-                    value: snapshot.data![index].fields.statusBayar,
+                    value: snapshot.data?[index].status_konseling,
                     onChanged: (bool? newValue) {},
                   ),
                   title: Container(
@@ -51,19 +51,27 @@ class _PembayaranPageState extends State<PembayaranPage> {
                         ]),
                     child: Column(children: [
                       Row(
-                        children: [Text(snapshot.data![index].fields.user)],
+                        children: [Text("Nama: " + snapshot.data?[index].nama)],
                       ),
                       Row(
                         children: [
-                          Text(snapshot.data![index].fields.tanggalJanji
-                              .substring(0, 10))
+                          Text("Status: " + snapshot.data?[index].status_user)
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("Bentuk Konseling: " +
+                              snapshot.data?[index].bentuk_konseling)
                         ],
                       ),
                       const SizedBox(
                         height: 8,
                       ),
                       Row(
-                        children: [Text(snapshot.data![index].fields.statusBayar)],
+                        children: [
+                          Text("Keluhan: " +
+                              snapshot.data?[index].keluhan_konseling)
+                        ],
                       ),
                     ]),
                   )),

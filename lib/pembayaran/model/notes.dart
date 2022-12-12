@@ -1,11 +1,3 @@
-import 'dart:convert';
-
-List<NotesAdmin> notesFromJson(String str) =>
-    List<NotesAdmin>.from(json.decode(str).map((x) => NotesAdmin.fromJson(x)));
-
-String notesToJson(List<NotesAdmin> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
 class NotesAdmin {
   NotesAdmin({
     required this.pk,

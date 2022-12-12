@@ -1,10 +1,8 @@
 import 'dart:convert';
 
-List<Pembayaran> pembayaranFromJson(String str) =>
-    List<Pembayaran>.from(json.decode(str).map((x) => Pembayaran.fromJson(x)));
+List<Pembayaran> pembayaranFromJson(String str) => List<Pembayaran>.from(json.decode(str).map((x) => Pembayaran.fromJson(x)));
 
-String pembayaranToJson(List<Pembayaran> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String pembayaranToJson(List<Pembayaran> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Pembayaran {
   Pembayaran({
@@ -24,7 +22,7 @@ class Pembayaran {
   String noHP;
   String keluhan;
   String hasilPeriksa;
-  DateTime tanggalJanji;
+  String tanggalJanji;
   bool statusBayar;
 
   factory Pembayaran.fromJson(Map<String, dynamic> json) => Pembayaran(
@@ -34,7 +32,7 @@ class Pembayaran {
         noHP: json["fields"]["noHP"],
         keluhan: json["fields"]["keluhan"],
         hasilPeriksa: json["fields"]["hasilPeriksa"],
-        tanggalJanji: DateTime.parse(json["tanggal_janji"]),
+        tanggalJanji: json["fields"]["tanggal_janji"],
         statusBayar: json["fields"]["statusBayar"],
       );
 
@@ -44,7 +42,7 @@ class Pembayaran {
         "user": user,
         "noHP": noHP,
         "keluhan": keluhan,
-        "tanggal_janji": tanggalJanji.toIso8601String(),
+        "tanggalJanji": tanggalJanji,
         "hasilPeriksa": hasilPeriksa,
         "statusBayar": statusBayar,
       };

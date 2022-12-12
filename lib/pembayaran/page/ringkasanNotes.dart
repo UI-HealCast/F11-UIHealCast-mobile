@@ -1,4 +1,4 @@
-import 'package:f11uihealcast/landing/components/drawer_pasien.dart';
+import 'package:f11uihealcast/landing/components/drawer_admin.dart';
 import 'package:f11uihealcast/pembayaran/component/ringkasanForm.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class _RingkasanState extends State<Ringkasan> {
       appBar: AppBar(
         title: const Text('Ringkasan Catatan Pembayaran'),
       ),
-      drawer: const DrawerPasien(),
+      drawer: const DrawerAdmin(),
       body: const RingkasanForm(),
     );
   }

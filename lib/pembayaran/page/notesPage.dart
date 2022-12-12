@@ -1,5 +1,4 @@
-// drawer admin
-import 'package:f11uihealcast/landing/components/drawer_pasien.dart';
+import 'package:f11uihealcast/landing/components/drawer_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:f11uihealcast/pembayaran/component/notesAdmin.dart';
 
@@ -19,7 +18,7 @@ class NotesAdminState extends State<NotesAdmin> {
       appBar: AppBar(
         title: const Text('Tambah Catatan Bulanan'),
       ),
-      drawer: const DrawerPasien(),
+      drawer: const DrawerAdmin(),
       body: FormNotesAdmin(formKey: _formKey),
     );
   }
