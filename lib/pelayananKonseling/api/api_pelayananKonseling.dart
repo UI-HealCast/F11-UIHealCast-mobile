@@ -37,3 +37,26 @@ addKonseling(request, nama, status_user, noHP, email, bentuk_konseling, keluhan_
       {"nama": nama, "status_user": status_user, "email": email, "noHP": noHP, "bentuk_konseling": bentuk_konseling, "keluhan_konseling": keluhan_konseling, "senin": senin, "selasa": selasa, "rabu": rabu, "kamis": kamis, "jumat": jumat, "sabtu": sabtu, "minggu": minggu, "pagi": pagi, "siang": siang, "sore": sore, "malam": malam});
   return response['status'];
 }
+
+deleteKonseling(request, pk) async {
+  var response = await request.get(
+      'https://uihealcast.up.railway.app/menu-pasien/delete/$pk');
+  return;
+}
+
+Future<List<ShowKonseling>> fetchKonselingDokter(request) async {
+  var url =
+      'https://uihealcast.up.railway.app/show_json_konseling_dokter/';
+  var response = await request.get(url);
+
+  var data = response;
+
+  List<ShowKonseling> log = [];
+
+  for (var d in data) {
+    if (d != null) {
+      log.add(ShowKonseling.fromJson(d));
+    }
+  }
+  return log;
+}

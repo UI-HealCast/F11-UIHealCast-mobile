@@ -1,12 +1,6 @@
 
 class ShowKonseling {
   ShowKonseling(
-      // {required this.pk,
-      // required this.keluhan,
-      // required this.tanggalJanji,
-      // required this.noHP,
-      // required this.status,
-      // required this.usernameDokter});
       {
     required this.pk,
     required this.nama,
@@ -30,11 +24,6 @@ class ShowKonseling {
   });
 
   int pk = 0;
-  // String keluhan = "";
-  // String tanggalJanji;
-  // bool status;
-  // String usernameDokter;
-  // String noHP;
   String nama = "";
   String status_user = "";
   String noHP = "";
@@ -97,10 +86,5 @@ class ShowKonseling {
         "siang": siang,
         "sore": sore,
         "malam": malam,
-
-        // "status": status,
-        // "tanggalJanji": tanggalJanji,
-        // "noHP": noHP,
-        // "usernameDokter": usernameDokter,
       };
 }
