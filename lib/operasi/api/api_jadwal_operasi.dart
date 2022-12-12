@@ -36,12 +36,18 @@ Future<List<Pasien>> fetchPasien(request) async {
 }
 
 addOperasi(request, pasien, tanggal, jam, keterangan) async {
-  var response = await request.post('http://uihealcast.up.railway.app/operasi/add/',
-      {"pasien": pasien, "tanggal": tanggal, "jam": jam, "keterangan": keterangan});
+  var response = await request.post(
+      'http://uihealcast.up.railway.app/operasi/add/', {
+    "pasien": pasien,
+    "tanggal": tanggal,
+    "jam": jam,
+    "keterangan": keterangan
+  });
   return response['status'];
 }
 
 deleteOperasi(request, pk) async {
-  var response =await request.get('http://uihealcast.up.railway.app/operasi/delete/$pk');
+  var response =
+      await request.get('http://uihealcast.up.railway.app/operasi/delete/$pk');
   return response['status'];
 }

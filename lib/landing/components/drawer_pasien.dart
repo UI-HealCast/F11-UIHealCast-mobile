@@ -57,7 +57,8 @@ class DrawerPasien extends StatelessWidget {
               // Route menu ke halaman utama
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const JadwalOperasiPasien()),
+                MaterialPageRoute(
+                    builder: (context) => const JadwalOperasiPasien()),
               );
             },
           ),
