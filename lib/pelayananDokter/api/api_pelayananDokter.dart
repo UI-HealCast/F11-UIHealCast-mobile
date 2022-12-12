@@ -2,7 +2,7 @@ import 'package:f11uihealcast/pelayananDokter/model/doctor_ready.dart';
 import 'package:f11uihealcast/pelayananDokter/model/show_log.dart';
 
 Future<List<DoctorReady>> fetchDokter(request) async {
-  var url = 'https://uihealcast.up.railway.app/pelayananDokter/show_doc/';
+  var url = 'http://127.0.0.1:8000/pelayananDokter/show_doc/';
   var response = await request.get(url);
 
   var data = response;
@@ -20,13 +20,13 @@ Future<List<DoctorReady>> fetchDokter(request) async {
 
 addJanji(request, keluhan, noHP, dokter) async {
   var response = await request.post(
-      'https://uihealcast.up.railway.app/pelayananDokter/add/',
+      'http://127.0.0.1:8000/pelayananDokter/add/',
       {"keluhan": keluhan, "noHP": noHP, "dokter": dokter});
   return response['status'];
 }
 
 Future<List<ShowLog>> fetchLog(request) async {
-  var url = 'https://uihealcast.up.railway.app/pelayananDokter/show_log/';
+  var url = 'http://127.0.0.1:8000/pelayananDokter/show_log/';
   var response = await request.get(url);
 
   var data = response;
