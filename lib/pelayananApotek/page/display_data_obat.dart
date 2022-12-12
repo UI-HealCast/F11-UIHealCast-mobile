@@ -1,6 +1,9 @@
 import 'package:f11uihealcast/pelayananApotek/component/drawer.dart';
 import 'package:f11uihealcast/pelayananApotek/api/fetch_data_obat.dart';
 import 'package:flutter/material.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
+import 'dart:convert';
 
 class DisplayObatPage extends StatefulWidget {
   const DisplayObatPage({Key? key}) : super(key: key);
@@ -12,6 +15,7 @@ class DisplayObatPage extends StatefulWidget {
 class _DisplayObatState extends State<DisplayObatPage> {
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     return Scaffold(
         appBar: AppBar(
           title: const Text("Data Obat"),
@@ -51,64 +55,26 @@ class _DisplayObatState extends State<DisplayObatPage> {
                                     child:
                                         Text("${snapshot.data![index].harga}")),
                                 Expanded(
-                                    child: Text(
-                                        "${snapshot.data![index].statusObat}")),
+                                    child: Text(snapshot.data![index].statusObat
+                                        ? "Tersedia"
+                                        : "Tidak tersedia")),
+                                IconButton(
+                                    icon: Icon(Icons.delete),
+                                    onPressed: () {
+                                      deleteObat(
+                                          request, snapshot.data![index].pk);
+                                      setState(() {});
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const DisplayObatPage()));
+                                    }),
                               ],
                             ))),
                       );
                     },
                   );
-                  // return Container(
-                  //         padding: const EdgeInsets.all(5),
-                  // child: DataTable(
-                  //   columns: const [
-                  //     DataColumn(
-                  //         label: Text(
-                  //       "Nama Obat",
-                  //       style: TextStyle(
-                  //           fontSize: 25, fontWeight: FontWeight.bold),
-                  //     )),
-                  //     DataColumn(
-                  //         label: Text(
-                  //       "Deskripsi Obat",
-                  //       style: TextStyle(
-                  //           fontSize: 25, fontWeight: FontWeight.bold),
-                  //     )),
-                  //     DataColumn(
-                  //         label: Text(
-                  //       "Harga",
-                  //       style: TextStyle(
-                  //           fontSize: 25, fontWeight: FontWeight.bold),
-                  //     )),
-                  //     DataColumn(
-                  //         label: Text(
-                  //       "Status",
-                  //       style: TextStyle(
-                  //           fontSize: 25, fontWeight: FontWeight.bold),
-                  //     )),
-                  //   ],
-                  //   rows: ListView.builder(
-                  //     itemCount: snapshot.data!.length,
-                  //     itemBuilder: (_, index) =>
-                  //     DataRow(cells: [
-                  //       DataCell(Text(
-                  //           "${snapshot.data![index].fields.namaObat}"))
-                  //     ]),
-                  //     DataRow(cells: [
-                  //       DataCell(Text(
-                  //           "${snapshot.data![index].fields.deskripsi}"))
-                  //     ]),
-                  //     DataRow(cells: [
-                  //       DataCell(
-                  //           Text("${snapshot.data![index].fields.harga}"))
-                  //     ]),
-                  //     DataRow(cells: [
-                  //       DataCell(Text(
-                  //           "${snapshot.data![index].fields.statusObat}"))
-                  //     ]),
-                  //   ]));
-                  //   },
-                  // );
                 }
               }
             }));

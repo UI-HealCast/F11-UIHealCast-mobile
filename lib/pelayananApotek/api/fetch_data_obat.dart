@@ -76,6 +76,14 @@ addObat(request, namaObat, deskripsi, harga) async {
   return response;
 }
 
+// updateStatusObat(request, statusObat, pk)
+
+deleteObat(request, pk) async {
+  var response = await request
+      .get('http://localhost:8000/pelayananApotek/delete_obat_flutter/${pk}');
+  return;
+}
+
 // class Fields {
 //   Fields({
 //     required this.namaObat,
