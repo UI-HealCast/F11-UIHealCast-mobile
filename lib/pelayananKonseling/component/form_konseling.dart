@@ -32,7 +32,9 @@ class _FormKonselingState extends State<FormKonseling> {
   bool? siang = false;
   bool? sore = false;
   bool? malam = false;
+  // integer noHP
   String? noHP;
+  
 
   bool isNumeric(String value) {
     if (value == null) {
@@ -155,6 +157,24 @@ class _FormKonselingState extends State<FormKonseling> {
                   },
                 ),
                 const SizedBox(height: 16),
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: 'Nomor Handphone',
+                    ),
+                    onChanged: (value) {
+                      noHP = value;
+                    },
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Nomor Handphone tidak boleh kosong';
+                      }
+                      if (!isNumeric(value)) {
+                        return 'Nomor Handphone harus berupa angka';
+                      }
+                      return null;
+                    },
+                  ),
+                const SizedBox(height: 16),
                 Text('Preferensi Hari Konseling'),
                 Row(
                   children: [
@@ -274,7 +294,25 @@ class _FormKonselingState extends State<FormKonseling> {
                   ),
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      addKonseling(request, nama, status_user, email, bentuk_konseling, keluhan_konseling, senin, selasa, rabu, kamis, jumat, sabtu, minggu, pagi, siang, sore, malam);
+                      addKonseling(
+                            request,
+                            nama,
+                            status_user,
+                            noHP,
+                            email,
+                            bentuk_konseling,
+                            keluhan_konseling,
+                            senin,
+                            selasa,
+                            rabu,
+                            kamis,
+                            jumat,
+                            sabtu,
+                            minggu,
+                            pagi,
+                            siang,
+                            sore,
+                            malam);
                       Navigator.pushReplacement(context, 
                         MaterialPageRoute(builder: (context) => KonselingPage(),
                       ));

@@ -17,7 +17,7 @@ Future<List<ShowKonseling>> fetchKonseling(request) async {
   return log;
 }
 
-addKonseling(request, nama, status_user, email, bentuk_konseling, keluhan_konseling, senin, selasa, rabu, kamis, jumat, sabtu, minggu, pagi, siang, sore, malam) async {
+addKonseling(request, nama, status_user, noHP, email, bentuk_konseling, keluhan_konseling, senin, selasa, rabu, kamis, jumat, sabtu, minggu, pagi, siang, sore, malam) async {
   senin = senin ? "true" : "false";
   selasa = selasa ? "true" : "false";
   rabu = rabu ? "true" : "false";
@@ -29,9 +29,11 @@ addKonseling(request, nama, status_user, email, bentuk_konseling, keluhan_konsel
   siang = siang ? "true" : "false";
   sore = sore ? "true" : "false";
   malam = malam ? "true" : "false";
+  // parse int to string
+  noHP = noHP.toString();
   
   var response = await request.post(
       'https://uihealcast.up.railway.app/pelayananKonseling/tembakDBAjax/',
-      {"nama": nama, "status_user": status_user, "email": email, "bentuk_konseling": bentuk_konseling, "keluhan_konseling": keluhan_konseling, "senin": senin, "selasa": selasa, "rabu": rabu, "kamis": kamis, "jumat": jumat, "sabtu": sabtu, "minggu": minggu, "pagi": pagi, "siang": siang, "sore": sore, "malam": malam});
+      {"nama": nama, "status_user": status_user, "email": email, "noHP": noHP, "bentuk_konseling": bentuk_konseling, "keluhan_konseling": keluhan_konseling, "senin": senin, "selasa": selasa, "rabu": rabu, "kamis": kamis, "jumat": jumat, "sabtu": sabtu, "minggu": minggu, "pagi": pagi, "siang": siang, "sore": sore, "malam": malam});
   return response['status'];
 }

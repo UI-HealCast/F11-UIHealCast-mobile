@@ -14,7 +14,7 @@ class _PelayananKonselingState extends State<PelayananKonselingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pelayanan Konseling'),
+        title: const Text('List Pelayanan Konseling'),
       ),
       drawer: const DrawerPasien(),
       body: const ListPelayananKonseling(),
