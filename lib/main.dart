@@ -1,5 +1,6 @@
 import 'package:f11uihealcast/landing/components/drawer_dokter.dart';
 import 'package:f11uihealcast/landing/components/drawer_pasien.dart';
+import 'package:f11uihealcast/landing/components/drawer_apoteker.dart';
 import 'package:f11uihealcast/landing/components/drawer_unlogin.dart';
 import 'package:f11uihealcast/pelayananDokter/page/pelayanan_dokter.dart';
 import 'package:provider/provider.dart';
@@ -75,7 +76,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ? const DrawerUnlogin()
           : widget.title == "Dokter"
               ? const DrawerDokter()
-              : const DrawerPasien(),
+              : widget.title == "Apoteker"
+                  ? const DrawerApoteker()
+                  : const DrawerPasien(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
