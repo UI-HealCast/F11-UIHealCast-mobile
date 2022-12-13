@@ -1,16 +1,17 @@
 import 'package:f11uihealcast/landing/api/landing_api.dart';
-import 'package:f11uihealcast/landing/page/list_pasien.dart';
 import 'package:f11uihealcast/main.dart';
-import 'package:f11uihealcast/operasi/page/form_jadwal_operasi.dart';
-import 'package:f11uihealcast/operasi/page/jadwal_operasi_dokter.dart';
-import 'package:f11uihealcast/pelayananApotek/page/data_obat_view_only.dart';
+import 'package:f11uihealcast/operasi/page/jadwal_operasi_pasien.dart';
+import 'package:f11uihealcast/pelayananApotek/component/form_obat.dart';
+import 'package:f11uihealcast/pelayananDokter/page/pelayanan_dokter.dart';
+import 'package:f11uihealcast/pelayananDokter/page/show_log.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
-import 'package:f11uihealcast/pelayananKonseling/page/jadwal_konseling_dokter.dart';
+import 'package:f11uihealcast/pelayananApotek/page/display_data_obat.dart';
+import 'package:f11uihealcast/pelayananApotek/page/display_status_obat.dart';
 
-class DrawerDokter extends StatelessWidget {
-  const DrawerDokter({Key? key}) : super(key: key);
+class DrawerApoteker extends StatelessWidget {
+  const DrawerApoteker({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,29 +28,29 @@ class DrawerDokter extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => const MyHomePage(
-                          title: "Dokter",
+                          title: "Apoteker",
                         )),
               );
             },
           ),
           ListTile(
-            title: const Text('Menu Pasien'),
-            onTap: () {
-              // Route menu ke halaman utama
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const ListPasienPage()),
-              );
-            },
-          ),
-          ListTile(
-            title: const Text('Buat Jadwal Operasi'),
+            title: const Text('Pelayanan Dokter'),
             onTap: () {
               // Route menu ke halaman utama
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const FormJadwalOperasi()),
+                    builder: (context) => const PelayananDokterPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('History Pelayanan Dokter'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const ShowLogPage()),
               );
             },
           ),
@@ -60,29 +61,39 @@ class DrawerDokter extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const JadwalOperasiDokter()),
+                    builder: (context) => const JadwalOperasiPasien()),
               );
             },
           ),
           ListTile(
-            title: const Text('Jadwal Konseling'),
+            title: const Text('Tambah Obat'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const FormObatPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Update Data Obat'),
             onTap: () {
               // Route menu ke halaman utama
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const ListKonselingDokter()),
+                    builder: (context) => const DisplayObatPage()),
               );
             },
           ),
           ListTile(
-            title: const Text('Lihat Data Obat'),
+            title: const Text('Update Status Obat Pasien'),
             onTap: () {
               // Route menu ke halaman utama
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const ViewOnlyObatPage()),
+                    builder: (context) => const DisplayStatusObatPage()),
               );
             },
           ),

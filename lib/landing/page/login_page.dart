@@ -117,8 +117,8 @@ class _LoginPageState extends State<LoginPage> {
                 backgroundColor: MaterialStateProperty.all(Colors.blue),
               ),
               onPressed: () async {
-                final response = await request
-                    .login("https://uihealcast.up.railway.app/login/", {
+                final response =
+                    await request.login("https://uihealcast.up.railway.app/login/", {
                   'username': username,
                   'password': password1,
                 });
@@ -130,7 +130,9 @@ class _LoginPageState extends State<LoginPage> {
                         MaterialPageRoute(
                           builder: (BuildContext context) => response["statDok"]
                               ? const MyHomePage(title: "Dokter")
-                              : const MyHomePage(title: "Pasien"),
+                              : response["statApo"]
+                                  ? const MyHomePage(title: "Apoteker")
+                                  : const MyHomePage(title: "Pasien"),
                         ));
                   }
                 } else {
