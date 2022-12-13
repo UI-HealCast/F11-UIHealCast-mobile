@@ -7,6 +7,7 @@ import 'package:f11uihealcast/pelayananApotek/page/data_obat_view_only.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:f11uihealcast/pelayananKonseling/page/jadwal_konseling_dokter.dart';
 
 class DrawerDokter extends StatelessWidget {
   const DrawerDokter({Key? key}) : super(key: key);
@@ -60,6 +61,17 @@ class DrawerDokter extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => const JadwalOperasiDokter()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Jadwal Konseling'),
+            onTap: () {
+              // Route menu ke halaman utama
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ListKonselingDokter()),
               );
             },
           ),
