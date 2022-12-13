@@ -155,6 +155,12 @@ class _FormKonselingState extends State<FormKonseling> {
                   onChanged: (value) {
                     keluhan_konseling = value;
                   },
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Keluhan Konseling tidak boleh kosong';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 16),
                   TextFormField(
@@ -214,6 +220,10 @@ class _FormKonselingState extends State<FormKonseling> {
                       },
                     ),
                     const Text('Kamis'),
+                  ],
+                ),
+                Row(
+                  children: [
                     Checkbox(
                       value: jumat,
                       onChanged: (value) {
