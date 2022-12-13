@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               onPressed: () async {
                 final response =
-                    await request.login("https://localhost:8000/login/", {
+                    await request.login("https://uihealcast.up.railway.app/login/", {
                   'username': username,
                   'password': password1,
                 });
