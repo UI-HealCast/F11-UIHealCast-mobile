@@ -60,3 +60,9 @@ Future<List<ShowKonseling>> fetchKonselingDokter(request) async {
   }
   return log;
 }
+
+ubahStatusKonseling(request, pk) async {
+  var response = await request
+      .get('https://uihealcast.up.railway.app/menu-pasien/set-konseling/$pk');
+  return;
+}

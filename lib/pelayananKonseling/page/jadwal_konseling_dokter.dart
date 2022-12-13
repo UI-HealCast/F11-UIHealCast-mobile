@@ -156,7 +156,22 @@ class _ListKonselingDokter extends State<ListKonselingDokter> {
                                         const ListKonselingDokter()),
                               );
                             },
-                          ))
+                          )),
+                          const Spacer(),
+                          Expanded(
+                              child: IconButton(
+                            icon: const Icon(Icons.edit),
+                            onPressed: () {
+                              ubahStatusKonseling(
+                                  request, snapshot.data![index].pk);
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ListKonselingDokter()),
+                              );
+                            },
+                          )),
                         ],
                       ),
                     ],

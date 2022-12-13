@@ -2,7 +2,8 @@ import 'package:f11uihealcast/landing/model/dokter_ready.dart';
 import 'package:f11uihealcast/landing/model/list_pasien_dokter.dart';
 
 register(request, username, password, password1) async {
-  final response = await request.post('https://uihealcast.up.railway.app/register/',
+  final response = await request.post(
+      'https://uihealcast.up.railway.app/register/',
       {"username": username, "password": password, "password1": password1});
   return response['status'];
 }
@@ -15,7 +16,8 @@ logout(request) async {
 }
 
 modifHasil(request, keluhan, pk) async {
-  final response = await request.post('https://uihealcast.up.railway.app/modif-hasil/',
+  final response = await request.post(
+      'https://uihealcast.up.railway.app/modif-hasil/',
       {"hasil": keluhan, "peka": pk.toString()});
 
   return response["status"];
