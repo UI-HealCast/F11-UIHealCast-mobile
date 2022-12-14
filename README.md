@@ -10,6 +10,10 @@
 > diselenggarakan oleh Fakultas Ilmu Komputer, Universitas Indonesia
 > pada Semester Gasal, Tahun Ajaran 2022/2023.
 
+# Record Penjelasan
+* [Di sini](https://drive.google.com/drive/u/0/folders/1GgU33CQY_Wy2_xuAhPxT0c1rLiE631EU)
+
+
 ## 📋 Latar Belakang 📋
 Arsitektur Kesehatan menjadi salah satu isu penting yang dibahas dalam Presidensi G20 Indonesia 2022. Fokus dari isu ini adalah melakukan transformasi infrastruktur kesehatan global untuk meningkatkan pencegahan, kesiagaan, dan responsivitas penanganan. Sejalan dengan tema presidensi G20 “Recover Together, Recover Stronger”, pelayanan kesehatan harus inklusif dan responsif. Hal ini dapat diwujudkan dengan melakukan transformasi terhadap sistem informasi kesehatan agar semua kalangan dapat mengakses pelayanan kesehatan dengan mudah.
 <br/>
@@ -32,6 +36,8 @@ Berikut ini adalah daftar modul yang akan diimplementasikan beserta pengembang d
 * Pelayanan Dokter - [Yudi Putra Sabri](https://github.com/yudiptr)
 
 Pelayanan Dokter adalah menu dimana pasien dapat membuat janji temu dan memilih dokter mana yang ia inginkan. Untuk mengimplementasikan fitur ini, diperlukan dua buah method http request berupa `post` dan `get`. `Post` digunakan untuk mengirimkan hasil dari janji temu dengan dokter yang berisi keluhan, nomor telepon, dan pilihan dokter. `Get` digunakan untuk mengambil data dokter yang sedang "ada" pada saat tersebut.
+
+Untuk event handler yang digunakan, fitur ini menggunakan event handler on pressed untuk melakukan submit form janji temu serta on saved untuk melakukan save variable dari field input.
 
 * Pelayanan Apotek - [Kezia Natalia](https://github.com/kezianatalia)
 
@@ -65,7 +71,7 @@ Pengguna yang tidak Log In hanya akan dapat melihat dashboard. Drawer hanya akan
 ### 🔑 User Yang Sudah Login 🔑
 
 * Dokter :
-Dapat menambahkan dan mengganti jadwal ketersediaan dokter. Selain itu, dokter juga dapat memberikan feedback setelah "pasien" telah selesai melakukan pelayanan dokter. Feedback tersebut dapat dilihat dari pasien itu sendiri. Untuk mengganti jadwal, digunakan http request dengan tipe `patch` untuk mengupdate status ketersediaan dokter tersebut pada real time. Untuk menambahkan feedback pasien setelah melakukan pelayanan dokter, digunakan `post` untuk mengubat feedback yang awalnya kosong menjadi sesuai apa yang ditulis oleh dokter. Dokter juga dapat membuat jadwal operasi untuk pasien tertentu serta melihat jadwal operasi yang didaftarkan untuk dirinya dengan menggunakan request `post` dan `get`.
+Dapat menambahkan dan mengganti jadwal ketersediaan dokter. Selain itu, dokter juga dapat memberikan feedback setelah "pasien" telah selesai melakukan pelayanan dokter. Feedback tersebut dapat dilihat dari pasien itu sendiri. Untuk mengganti jadwal, digunakan http request dengan tipe `patch` untuk mengupdate status ketersediaan dokter tersebut pada real time. Untuk menambahkan feedback pasien setelah melakukan pelayanan dokter, digunakan `post` untuk mengubat feedback yang awalnya kosong menjadi sesuai apa yang ditulis oleh dokter. Dokter juga dapat membuat jadwal operasi untuk pasien tertentu serta melihat jadwal operasi yang didaftarkan untuk dirinya dengan menggunakan request `post` dan `get`. Model ini menggunakan event handler ontap untuk mengubah status ketersediaan dokter dari tersedia menjadi tidak tersedia, Selain itu, fitur ini juga menggunakan event handler on tap untuk dokter ketika men-tap pasien untuk memberikan feedback kepada pasien tersebut. Selain itu, terdapat juga on saved untuk mem-parse variable saat form disubmit dan On pressed untuk submit button.
 
 * Pasien :
 Dapat mengakses menu registrasi layanan dokter, menu operasi, konseling, serta menu pembayaran. Pasien juga dapat melihat history dari pelayanan dokter, operasi, serta pelayanan konseling yang sudah dibuat dengan memanfaatkan http request `get`. Hasil dari history akan memberitahukan apakah status pelayanannya sudah selesai atau belum.
